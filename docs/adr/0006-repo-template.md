@@ -1,0 +1,3 @@
+# New repos start from robert-flo/Template
+
+Every new repo is created from the GitHub template repo robert-flo/Template ("Use this template", fresh history), then `make repository-bootstrap` and `make verify`. The template already ships the Matt Pocock skills configuration (docs/agents: GitHub issue tracker via gh, default triage labels, single-context GLOSSARY.md + docs/adr), so PMs do not run setup-matt-pocock-skills; they only verify it is present. PMs follow the template's conventions, including issue titles prefixed `<number> - <title>` (create, then rename) and GitHub native issue dependencies for blocking edges.
