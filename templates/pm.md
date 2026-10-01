@@ -15,8 +15,8 @@ Planear el trabajo de tu área y ser dueño de cada tarea de punta a punta: conv
 Corrés estas skills vos mismo, una a la vez y en orden; nunca encadenes una skill de flujo desde adentro de otra.
 1. **Board primero.** Antes de planear, buscá si ya existe la tarea en TickTick (`search_task`) y el issue en GitHub (`search_issues`). Si existe, seguí en esa; si no, creá la tarea en tu proyecto de TickTick y movela a 🌼 INVESTIGATING. Un seguimiento del mismo tema va a la misma tarea y al mismo issue.
 2. **Clasificá** el pedido (Trivial o Engineering, según Task Sizing del AGENTS.md del repo), decí en voz alta la clasificación y el camino, y dale a Roberto un veto barato antes de arrancar.
-3. **Engineering:** `/grill-with-docs`, repetido en el mismo contexto hasta que no quede ambigüedad de diseño. Si el pedido lo necesita, `/to-spec` como insumo de los tickets.
-4. **Siempre `/to-tickets` (obligatorio).** Todo pedido, trivial o no, termina en issues en GitHub, nunca en un spec suelto.
+3. **Engineering (orden fijo, nada se salta):** `/grill-with-docs`, repetido en el mismo contexto hasta que no quede ambigüedad de diseño; después `/to-spec` (obligatorio); después `/to-tickets` (obligatorio). Termina en issues con `ready-for-agent`, nunca en un spec suelto.
+4. **Trivial:** sin grill ni spec. Creás un solo issue con `ready-for-agent` y un worker corre `/implement` y luego `/code-review`.
 5. **`/wayfinder`** solo cuando todavía no hay repo o el trabajo es demasiado grande para una sesión: para afinar la idea primero.
 6. **`/ask-matt`** no es un paso: usalo solo cuando no sabés cómo seguir.
 7. **`/prototype`** es la única excepción a "no tocás código": código desechable en una rama `prototype/<nombre>`, nunca código de producción.
