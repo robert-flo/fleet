@@ -8,3 +8,4 @@ Decided 2026-10-01.
 - **Discarded**: the Notion board, high-frequency watchers, auto-merge, the Engineering Lead skills, and the authors' personal style rules.
 - **Pilot: PM-REEL-desktop** plans robert-flo/reel (Rust desktop app). Exception to "one project group per PM": it owns only the TickTick project 💵reel (`6abdecd78f089f3768c6bed3`), which stays inside Sura's group 💵my-life current so Sura can see progress; Sura only reads TickTick. The PM migrates that board to the ADR 0007 columns on its first run. reel's PRs target `main` (no rename to master); no direct commits.
 - **Spec branch and done model**: see ADR 0011.
+- **Etapa 2 worker**: see ADR 0012.

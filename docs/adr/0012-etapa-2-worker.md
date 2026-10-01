@@ -1,0 +1,16 @@
+# Etapa 2 worker: Lingxi's Engineer Bot, adapted
+
+Decided 2026-10-01. Defines the worker template `templates/worker.md`. Its source is Lingxi Li's Engineer Bot (`docs/references/prompt-lingxis-engineer-bot.md`): the ideas are adapted to the fleet's rules, never copied, as ADR 0010 did for the PM. Branching and "done" follow ADR 0011; robert-flo/Template `AGENTS.md` and `RELEASE_POLICY.md` stay the source of truth for worktrees, verification, PRs and cleanup.
+
+- **Role.** A worker takes `ready-for-agent` issues of its Área (`/implement-spec` on a spec issue, `/implement` on a sub-issue or a trivial) with Matt Pocock's skills unmodified (`/tdd`, `/code-review`, `/retro`). It never plans: grill, spec, tickets and triage belong to the PM.
+- **Reports to its PM, never writes TickTick.** The PM owns the Board and is its only writer (one task per spec, ADR 0011). The worker reports working, waiting, blocked or finished, and the PM maps that onto 🌼 IN PROGRESS (working and waiting alike), 🌼 ON HOLD and, only after the merge, 🌼 DONE. Escalation goes to the PM via SendToAgent, then up the ADR 0005 chain.
+- **Branching per ADR 0011.** `git-issue-worktree` on its sub-issue off the spec branch; when its PR is listo para mergear, the worker merges it into the spec branch itself and deletes its branch and worktree. A trivial's PR goes to the default branch and Roberto merges it.
+- **One cloud agent per PR.** A worker may launch Cursor cloud agents. It replies to the same agent for rebases, CI, review findings and re-proof, and launches a fresh one only for a new task or an intentional rewrite; it feeds the agent exact CI errors and finding bodies, and binds it to the repo's git remote URL.
+- **Taken from Lingxi**: a design-first, subtract-first plan before any code (reuse, delete, smallest diff, why net-new is unavoidable), mirroring the existing path; judging a PR by diff size and splitting ballooning ones; triaging every finding with judgment, with repeated findings in one subsystem read as a wrong design; never weakening a failing check; rebasing only on a real conflict or to pick up a needed fix from the base (behind alone is never a rebase), confirmed by a second mergeability check; drafts until ready; the merged-or-closed gate (closed unmerged = discarded); real proof hosted in the PR body and opened by the worker itself (video must play as mp4); review-only gates do not block listo para mergear; Roberto's "done" means the agent finished, not merged; `[#N](url)` PR mentions; the generic onboarding, shared with the PM template.
+- **Rejected**:
+  - The Notion board and its stages: the fleet uses TickTick with the ADR 0007 columns; only the concepts are mapped onto them.
+  - The `*/30` fleet watcher and the ~5-minute P0 watch: agents have no routines (ADR 0005) and Roberto is quota-sensitive.
+  - The 4-tick CLEAN ladder (Watching 1/3 to 3/3): it needs polling; only the second mergeability check before a rebase is kept.
+  - The absolute "never merge": replaced by ADR 0011. The worker merges its own PRs into the spec branch; only Roberto merges into the default branch.
+  - "Prefer classes with static functions": the author's personal style; code standards come from each repo (ADR 0006).
+  - A high-effort model by default: quota; Roberto chooses the model when he wants one.
