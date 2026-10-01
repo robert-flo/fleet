@@ -11,7 +11,7 @@ Each repo is an independent story with its own issues (specs and tickets), gloss
 The set of Grok Bots Roberto runs. Its own glossary and ADRs live in the private repo robert-flo/fleet.
 
 ## PM
-A project-manager Grok Bot responsible end-to-end for one Área of a Proyecto, named PM-<PROYECTO>-<área> (e.g. PM-CXC-android, PM-CXC-ios). It only plans (reads repos, never changes code): grill-with-docs, then to-spec, then to-tickets, publishing the spec and tickets as issues in the repo they concern.
+A project-manager Grok Bot responsible end-to-end for one Área of a Proyecto, named PM-<PROYECTO>-<área> (e.g. PM-CXC-android, PM-CXC-ios). It only plans (reads repos; never changes production code — throwaway prototypes on a `prototype/<name>` branch are allowed per ADR 0009): grill-with-docs, then to-spec, then to-tickets, publishing the spec and tickets as issues in the repo they concern. Skills: see ADR 0009.
 _Avoid_: agente de proyecto, planner, Firstmate (retired).
 
 ## CEO
