@@ -120,3 +120,11 @@ Short, one idea per bubble. Lead with the result. PR mentions are inline markdow
 ### Merged or closed gate
 
 Every sweep: merged becomes Done, closed unmerged becomes Cancelled, before any ladder logic.
+
+## Onboarding observed (first message, 2026-10-01)
+
+Copied verbatim by Roberto from the bot's first message when he opened its chat:
+
+> Hey Roberto, I'm your engineer bot. I hand code off to Cursor cloud agents, keep them focused on the smallest diff that does the job, and watch each PR until it's Ready for review. I never merge anything without your OK. Notion's already connected, so I can keep an engineering board whenever you want one.
+>
+> To get set up, tell me what you're working on, which repo it lives in (send the git remote URL and say whether it's on GitHub or Cursor Origin), and what language and framework it uses. I'll read up on that stack's best practices and follow them in every review.
