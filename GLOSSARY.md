@@ -1,7 +1,7 @@
 # Glossary: Roberto's bot fleet
 
 ## Proyecto
-A body of work Roberto pursues (e.g. CXC), led by one Gerente regional and split into Áreas, each owned by one PM.
+A body of work Roberto pursues (e.g. CXC, reel). Eggbot is the PM of every Proyecto; Workers execute (ADR 0014).
 _Avoid_: using "proyecto" to mean a single repo.
 
 ## Repo
@@ -11,11 +11,11 @@ Each repo is an independent story with its own issues (specs and tickets), gloss
 The set of Grok Bots Roberto runs. Its own glossary and ADRs live in the private repo robert-flo/fleet.
 
 ## PM
-A project-manager Grok Bot responsible end-to-end for one Área of a Proyecto, named PM-<PROYECTO>-<área> (e.g. PM-CXC-android, PM-CXC-ios). It only plans (reads repos; never changes production code — throwaway prototypes on a `prototype/<name>` branch are allowed per ADR 0009): grill-with-docs, then to-spec, then to-tickets, publishing the spec and tickets as issues in the repo they concern. Skills: see ADR 0009.
-_Avoid_: agente de proyecto, planner, Firstmate (retired).
+Real dr eggbot, Roberto's single PM for every Proyecto (ADR 0014). There are no per-project PM bots anymore: the PM-<PROYECTO>-<área> bots of ADR 0001 and 0009–0013 are retired; the `create-pm` skill stays intact.
+_Avoid_: agente de proyecto, planner, PM-<PROYECTO>-<área> (retired).
 
 ## Worker
-An execution Grok Bot of Etapa 2 with a role in one Área, reporting to that Área's PM. It takes `ready-for-agent` issues and carries them to a PR that is listo para mergear, with real proof; it never plans and never writes the Board. Template: `templates/worker.md`; decisions: ADR 0012.
+A disposable Grok Bot created by eggbot from `templates/worker.md` when Roberto asks. Roberto talks to it directly to iterate its PR, ask for the merge, or drop it, and he deletes it himself once he's done. Inside, it may launch Cursor cloud agents to write the code. Eggbot keeps it on the tracking board and records lessons before it is deleted. Decisions: ADR 0014; skill: `create-worker`.
 _Avoid_: executor, agente de ejecución, cloud agent (a Cursor cloud agent is a tool a Worker may launch, not a Worker).
 
 ## Rama del spec
@@ -27,7 +27,7 @@ A PR state: CI green, no security findings, no unresolved bot review threads, an
 _Avoid_: CLEAN, Ready for review, done.
 
 ## CEO
-Real dr eggbot: the highest authority over the Flota. It holds the shared vision, designs and creates agents, supervises how they work, and corrects them when they drift. It does not plan individual Proyectos.
+Real dr eggbot: the highest authority over the Flota and, since ADR 0014, also its single PM. It holds the shared vision, plans the Proyectos, creates Workers when Roberto asks, and keeps the Workers board.
 
 ## Auditoría de flota
 The CEO's weekly review of every agent's real work (transcripts, issues), followed by corrections to agents that drifted.
@@ -42,16 +42,16 @@ Review and execution: an adversarial-review bot checks specs and tickets before 
 A fixed format Roberto supplies that agents apply instead of improvising (repo layout, TickTick columns). Agents follow Plantillas; they never invent structure.
 
 ## Área
-One end-to-end slice of a Proyecto's code owned by a single PM (backend, frontend, iOS, Android…).
+One end-to-end slice of a Proyecto's code (backend, frontend, iOS, Android…).
 
 ## Gerente regional
-One manager bot per Proyecto, over all its PMs. It coordinates work that crosses Áreas (e.g. an API change affecting android and ios) and reports to Roberto. Roberto talks directly to each PM day to day.
+Retired by ADR 0014: it was one manager bot per Proyecto, over all its PMs. Eggbot coordinates work that crosses Áreas.
 
 ## Hierarchy
-CEO > Gerente regional (one per Proyecto) > PM (one per Área, may own several repos) > Workers (Etapa 2). PMs only plan and delegate execution to Workers.
+Roberto > eggbot (CEO and single PM) > Workers (disposable, one per request). ADR 0014 replaces the old CEO > Gerente regional > PM > Workers chain.
 
 ## Piloto
-The first run of Etapa 1: a single PM for a new Proyecto. The Gerente regional is created only once a second PM exists.
+Retired by ADR 0014: the first run of Etapa 1 with a single per-project PM.
 
 ## Board
 A TickTick project group (folder, kanban view) holding several lists. Each PM owns exactly one Board, and it is its only area of action in TickTick; columns come from the TickTick Plantilla.
