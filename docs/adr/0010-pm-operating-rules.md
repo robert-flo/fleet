@@ -1,0 +1,8 @@
+# PM operating rules (from the marketplace review) and the reel pilot
+
+Decided 2026-10-01.
+
+- **Bot-invoked flow skills.** A PM runs ask-matt, wayfinder, grill-with-docs, to-spec and to-tickets itself as its workflow, in sequence, but never chains one flow skill from inside another. Roberto's skills are a fork of Matt Pocock's, so `grilling` is the same primitive they expect. Shared skills stay unmodified; the flow is spelled out in each PM's description (skill create-pm).
+- **Rules adapted from Lingxi Li's Engineer Bot**: clean task and issue titles (state lives in the column, the only prefix is `<number> - `); board-first (create or move the TickTick task to 🌼 INVESTIGATING before planning; follow-ups fold into the same task); search before creating, link instead of duplicating; never touch the dates, priority or assignee Roberto sets, nor columns outside ADR 0007; each acceptance criterion states the proof that closes it before `ready-for-agent`; short, decisive messages; never invent links; a blocker from the default branch is recorded and escalated, never fixed by the PM.
+- **Discarded**: the Notion board, high-frequency watchers, auto-merge, the Engineering Lead skills, and the authors' personal style rules.
+- **Pilot: PM-REEL-desktop** plans robert-flo/reel (Rust desktop app). Exception to "one project group per PM": it owns only the TickTick project 💵reel (`6abdecd78f089f3768c6bed3`), which stays inside Sura's group 💵my-life current so Sura can see progress; Sura only reads TickTick. The PM migrates that board to the ADR 0007 columns on its first run. reel's PRs target `main` (no rename to master); no direct commits.
