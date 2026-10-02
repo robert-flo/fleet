@@ -19,7 +19,7 @@ A specialized Grok Bot its PM creates for one spec or trivial with the `create-w
 _Avoid_: executor, agente de ejecución, cloud agent (a Cursor cloud agent is a tool a Worker may launch, not a Worker).
 
 ## Reviewer
-A Grok Bot that reviews only the final PR from a Rama del spec to `main` before Roberto reviews it, then comments `BLOQUEO` or `APRUEBO` (ADR 0017). Workers' sub-issue PRs do not go through it.
+A Grok Bot that reviews only the final PR from a Rama del spec to `main` before Roberto reviews it, then comments `BLOQUEO` or `APRUEBO` (ADR 0017). The PM handles `ready-for-human`, TickTick and summoning Roberto; the reviewer only comments and reports the verdict. Workers' sub-issue PRs do not go through it.
 
 ## Rama del spec
 The integration branch of one spec, created by the PM from the repo's default branch when the spec issue is published. Workers' PRs merge into it; its single final PR to the default branch is the one Roberto approves (ADR 0011).
