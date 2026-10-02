@@ -80,4 +80,4 @@ A TickTick column tracks a whole spec; a triage role (Matt's `/triage` label) tr
 | 🌼 IN PROGRESS | Worker implementing the sub-issues | Sub-issues carry `ready-for-agent` |
 | 🌼 ON HOLD | Paused on a blocker | `needs-info` when waiting on Roberto or a reporter |
 | 🌼 QA TO CONFIRM | Final PR open, reviewer's turn | After APRUEBO the PR carries `ready-for-human` (for a PR: ready for a human to merge) |
-| 🌼 DONE | Merged to the default branch | Spec and sub-issues closed; a discarded spec closes as `wontfix` |
+| 🌼 DONE | Merged to the default branch | Spec and sub-issues closed, `ready-for-human` removed from the merged PR (no triage role after merge); a discarded spec closes as `wontfix` |
