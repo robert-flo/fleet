@@ -1,5 +1,7 @@
 # Real dr eggbot es el único PM y los workers son desechables
 
+> Reemplazado por ADR 0015 (2026-10-01): vuelven los PMs y los workers especializados, con instrucciones por ficha y mensaje de arranque.
+
 Decidido 2026-10-01 con Roberto. Reemplaza la jerarquía de ADR 0001 y del `GLOSSARY.md` (CEO > Gerente regional > PM por Área > Workers). Los ADR 0011, 0012 y 0013 se escribieron para ese modelo de un PM por proyecto: valen como historia y como fuente de ideas, no como reglas vigentes de un PM que ya no existe.
 
 - **Un solo PM.** Real dr eggbot (el Grok Bot principal) es el PM de Roberto para todos los proyectos y la base de todo, como un Firstmate. No hay más bots PM por proyecto ni Gerente regional. La skill `create-pm` se queda intacta.
