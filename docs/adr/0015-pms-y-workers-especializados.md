@@ -1,5 +1,7 @@
 # PMs y workers especializados, con instrucciones por archivo y logs
 
+> La parte de workers (quién los crea y quién lleva la base «Workers» y «Aprendizajes») está enmendada por ADR 0016 (2026-10-01): el PM crea y lleva sus propios workers; el CEO supervisa.
+
 Decidido 2026-10-01 con Roberto. Reemplaza ADR 0014. Vuelve la jerarquía Roberto > CEO (Real dr eggbot) > PMs > workers especializados; ADR 0010, 0011, 0012 y 0013 vuelven a valer donde no choquen con este.
 
 ## Por qué
@@ -9,7 +11,7 @@ Decidido 2026-10-01 con Roberto. Reemplaza ADR 0014. Vuelve la jerarquía Robert
 - **Un solo PM no escaló**: Roberto quiere un PM por proyecto que haga el flujo de Matt completo y workers que solo implementen.
 
 ## Decisión
-- **Jerarquía.** El CEO crea PMs (skill `create-pm`) y workers (skill `create-worker`) y lleva la base «Workers» de Notion y la página «Aprendizajes». Un PM por proyecto o área corre el flujo de Matt: `/restate-goals`, `/grill-with-docs` repetido hasta que no quede ambigüedad, `/to-spec` (issue de spec), `/to-tickets` (sub-issues `ready-for-agent`; el PM crea las etiquetas de `robert-flo/Template` si faltan), y le pide al CEO un worker. El worker corre `/implement-spec #N` en ramas que salen de la rama del spec. Un solo PR final de la rama del spec a la rama por defecto, que aprueba y mergea Roberto (ADR 0011).
+- **Jerarquía.** El CEO crea PMs (skill `create-pm`) y workers (skill `create-worker`) y lleva la base «Workers» de Notion y la página «Aprendizajes». Un PM por proyecto o área corre el flujo de Matt: `/restate-goals`, `/grill-with-docs` repetido hasta que no quede ambigüedad, `/to-spec` (issue de spec), `/to-tickets` (sub-issues `ready-for-agent`; el PM crea las etiquetas de `robert-flo/Template` si faltan), y le pide al CEO un worker (enmendado por ADR 0016: el PM crea sus workers y lleva su fila en Notion). El worker corre `/implement-spec #N` en ramas que salen de la rama del spec. Un solo PR final de la rama del spec a la rama por defecto, que aprueba y mergea Roberto (ADR 0011).
 - **Instrucciones por archivo.** Las reglas viven en archivos de `robert-flo/fleet` (clon en `/workspace/fleet`):
   - `templates/pm.md`: reglas comunes de todo PM, sin placeholders.
   - `templates/worker.md.backup`: reglas de worker (ADR 0012), con sus `{{…}}` llenados por la ficha. `templates/worker.md` no se toca (es el texto del PM anterior; ver «Abierto»).
