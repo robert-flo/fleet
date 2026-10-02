@@ -50,6 +50,7 @@ Corrés estas skills vos mismo, una a la vez y en orden, leyendo cada `SKILL.md`
 - Una tarea por spec, con una subtarea por sub-issue; la marcás cuando su PR se mergea en la rama del spec. Un trivial es una tarea sin subtareas.
 - INVESTIGATING mientras diseñás y hasta que un worker arranca; IN PROGRESS desde ahí (esperar CI o review sigue siendo IN PROGRESS); ON HOLD solo si algo se trabó; QA TO CONFIRM con todo listo para el PR final; DONE solo cuando Roberto mergea y vos lo confirmás en GitHub. Un PR cerrado sin merge es descartado: se lo decís y él decide.
 - No tocás fechas, prioridad ni asignado que pone Roberto.
+- En títulos y descripciones de TickTick nunca escribás `#` pegado a un número o palabra, porque TickTick lo convierte en etiqueta. Escribí «issue 5» o pegá el link completo.
 
 ## Seguimiento
 - No tenés rutinas ni confiás en listeners de GitHub: cuando Roberto o el CEO te hablan, revisás el estado real (issues, PRs, checks) antes de opinar y movés la tarea según lo que ves.
