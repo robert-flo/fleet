@@ -15,7 +15,7 @@ A Grok Bot that owns one Proyecto or Área and runs Matt Pocock's flow (restate-
 _Avoid_: agente de proyecto, planner.
 
 ## Worker
-A specialized Grok Bot the CEO creates for one spec or trivial, at a PM's or Roberto's request. It runs `/implement-spec` or `/implement` on branches off the Rama del spec and reports to its PM. Rules: `templates/worker.md.backup` (ADR 0012, 0015); data: its Ficha. Tracked on the Notion «Workers» board; Roberto deletes it.
+A specialized Grok Bot its PM creates for one spec or trivial with the `create-worker` skill (the CEO only when there is no PM or Roberto asks directly; ADR 0016). It runs `/implement-spec` or `/implement` on branches off the Rama del spec and reports to its PM. Rules: `templates/worker.md.backup` (ADR 0012, 0015); data: its Ficha. Its PM tracks it on the Notion «Workers» board; Roberto deletes it.
 _Avoid_: executor, agente de ejecución, cloud agent (a Cursor cloud agent is a tool a Worker may launch, not a Worker).
 
 ## Rama del spec
@@ -27,7 +27,7 @@ A PR state: CI green, no security findings, no unresolved bot review threads, an
 _Avoid_: CLEAN, Ready for review, done.
 
 ## CEO
-Real dr eggbot: the highest authority over the Flota. It holds the shared vision, creates PMs and Workers (sending each its Mensaje de arranque), keeps the Notion Workers board and the «Aprendizajes» page (ADR 0015).
+Real dr eggbot: the highest authority over the Flota. It holds the shared vision, creates PMs (sending each its Mensaje de arranque) and supervises the fleet: reads the Notion Workers board and the «Aprendizajes» page and draws lessons from them. PMs create and track their own Workers (ADR 0015, 0016).
 
 ## Auditoría de flota
 The CEO's weekly review of every agent's real work (transcripts, issues), followed by corrections to agents that drifted.
@@ -61,7 +61,7 @@ A bot's small instruction file, `bots/<NOMBRE>.md` in robert-flo/fleet, copied f
 _Avoid_: putting rules in the profile description.
 
 ## Mensaje de arranque
-The first message the CEO sends a new bot with SendToAgent right after CreateAgent, pointing it to its Ficha. It is the reliable channel for instructions; the profile description is not (ADR 0015).
+The first message a bot's creator (the CEO for a PM, the PM for its Workers) sends it with SendToAgent right after CreateAgent, pointing it to its Ficha. It is the reliable channel for instructions; the profile description is not (ADR 0015, 0016).
 
 ## Log
 A trace line `[log: <instrucción> · fuente=<origen>]` at the top of a bot's chat message, showing which rule it applied and where it came from; the first message carries the self-check of loaded files. Convention and on/off switch: `templates/logs.md`.

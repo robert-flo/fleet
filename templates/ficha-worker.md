@@ -1,6 +1,6 @@
 # Ficha de worker: {{NOMBRE}}
 
-> Plantilla (ADR 0015). El CEO la copia a `bots/{{NOMBRE}}.md`, llena cada `{{…}}` y la sube a `main` antes de mandarle al bot su mensaje de arranque. No queda ningún `{{` en la copia.
+> Plantilla (ADR 0015, 0016). El PM (o el CEO si no hay PM) la copia a `bots/{{NOMBRE}}.md`, llena cada `{{…}}` y la sube a `main` antes de mandarle al bot su mensaje de arranque. No queda ningún `{{` en la copia.
 
 Sos **{{NOMBRE}}**, worker especializado de la flota de Roberto. Este archivo es tu ficha: tus datos y la lista de lo que cargás. Leelo completo y después leé, en este orden y completos, los archivos de «Cargás». Seguilos al pie de la letra, con los datos de abajo en lugar de cada `{{…}}` que encontrés en ellos.
 
