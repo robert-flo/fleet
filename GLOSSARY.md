@@ -1,7 +1,7 @@
 # Glossary: Roberto's bot fleet
 
 ## Proyecto
-A body of work Roberto pursues (e.g. CXC, reel). Eggbot is the PM of every Proyecto; Workers execute (ADR 0014).
+A body of work Roberto pursues (e.g. CXC, reel). Each Proyecto (or Área) has its own PM; Workers execute (ADR 0015).
 _Avoid_: using "proyecto" to mean a single repo.
 
 ## Repo
@@ -11,11 +11,11 @@ Each repo is an independent story with its own issues (specs and tickets), gloss
 The set of Grok Bots Roberto runs. Its own glossary and ADRs live in the private repo robert-flo/fleet.
 
 ## PM
-Real dr eggbot, Roberto's single PM for every Proyecto (ADR 0014). There are no per-project PM bots anymore: the PM-<PROYECTO>-<área> bots of ADR 0001 and 0009–0013 are retired; the `create-pm` skill stays intact.
-_Avoid_: agente de proyecto, planner, PM-<PROYECTO>-<área> (retired).
+A Grok Bot that owns one Proyecto or Área and runs Matt Pocock's flow (restate-goals, grill-with-docs, to-spec, to-tickets) up to `ready-for-agent` sub-issues, then follows each spec to its final PR (ADR 0015). Its rules are `templates/pm.md`; its data, its Ficha. Created by the CEO with the `create-pm` skill.
+_Avoid_: agente de proyecto, planner.
 
 ## Worker
-A disposable Grok Bot created by eggbot from `templates/worker.md` when Roberto asks. Roberto talks to it directly to iterate its PR, ask for the merge, or drop it, and he deletes it himself once he's done. Inside, it may launch Cursor cloud agents to write the code. Eggbot keeps it on the tracking board and records lessons before it is deleted. Decisions: ADR 0014; skill: `create-worker`.
+A specialized Grok Bot the CEO creates for one spec or trivial, at a PM's or Roberto's request. It runs `/implement-spec` or `/implement` on branches off the Rama del spec and reports to its PM. Rules: `templates/worker.md.backup` (ADR 0012, 0015); data: its Ficha. Tracked on the Notion «Workers» board; Roberto deletes it.
 _Avoid_: executor, agente de ejecución, cloud agent (a Cursor cloud agent is a tool a Worker may launch, not a Worker).
 
 ## Rama del spec
@@ -27,7 +27,7 @@ A PR state: CI green, no security findings, no unresolved bot review threads, an
 _Avoid_: CLEAN, Ready for review, done.
 
 ## CEO
-Real dr eggbot: the highest authority over the Flota and, since ADR 0014, also its single PM. It holds the shared vision, plans the Proyectos, creates Workers when Roberto asks, and keeps the Workers board.
+Real dr eggbot: the highest authority over the Flota. It holds the shared vision, creates PMs and Workers (sending each its Mensaje de arranque), keeps the Notion Workers board and the «Aprendizajes» page (ADR 0015).
 
 ## Auditoría de flota
 The CEO's weekly review of every agent's real work (transcripts, issues), followed by corrections to agents that drifted.
@@ -48,10 +48,21 @@ One end-to-end slice of a Proyecto's code (backend, frontend, iOS, Android…).
 Retired by ADR 0014: it was one manager bot per Proyecto, over all its PMs. Eggbot coordinates work that crosses Áreas.
 
 ## Hierarchy
-Roberto > eggbot (CEO and single PM) > Workers (disposable, one per request). ADR 0014 replaces the old CEO > Gerente regional > PM > Workers chain.
+Roberto > CEO (eggbot) > PMs (one per Proyecto or Área) > Workers (specialized, per spec). ADR 0015 replaces ADR 0014's single-PM model.
 
 ## Piloto
 Retired by ADR 0014: the first run of Etapa 1 with a single per-project PM.
 
 ## Board
 A TickTick project group (folder, kanban view) holding several lists. Each PM owns exactly one Board, and it is its only area of action in TickTick; columns come from the TickTick Plantilla.
+
+## Ficha
+A bot's small instruction file, `bots/<NOMBRE>.md` in robert-flo/fleet, copied from `templates/ficha-pm.md` or `templates/ficha-worker.md`: its data and the list of rule files it loads (ADR 0015).
+_Avoid_: putting rules in the profile description.
+
+## Mensaje de arranque
+The first message the CEO sends a new bot with SendToAgent right after CreateAgent, pointing it to its Ficha. It is the reliable channel for instructions; the profile description is not (ADR 0015).
+
+## Log
+A trace line `[log: <instrucción> · fuente=<origen>]` at the top of a bot's chat message, showing which rule it applied and where it came from; the first message carries the self-check of loaded files. Convention and on/off switch: `templates/logs.md`.
+_Avoid_: using logs in issues, PRs or commits.
