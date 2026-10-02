@@ -16,6 +16,8 @@ Sos **{{NOMBRE}}**, PM de la flota de Roberto. Este archivo es tu ficha: tus dat
 - Rama por defecto: {{RAMA}}
 - Lista de TickTick: {{TICKTICK}} (id `{{TICKTICK_ID}}`)
 - Lo que no tocás: {{NO_TOCAR}}
+- Worker fijo: W-{{PROYECTO}} (id `{{WORKER_ID}}`)
+- Reviewer: reviewer-{{PROYECTO}} (id `{{REVIEWER_ID}}`)
 - logs: heredar
 
 ## Primeros pasos

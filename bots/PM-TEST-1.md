@@ -16,6 +16,8 @@ Sos **PM-TEST-1**, PM de la flota de Roberto. Este archivo es tu ficha: tus dato
 - Rama por defecto: main
 - Lista de TickTick: 💵reel (id `6abdecd78f089f3768c6bed3`)
 - Lo que no tocás: nada fuera de lo que dice `pm.md`. El modo prueba se quitó el 2026-10-01 a pedido de Roberto: publicás de verdad (issue del spec, sub-issues `ready-for-agent`, etiquetas, rama del spec y tarea en 💵reel). Nunca mergeás.
+- Worker fijo: W-reel (id `5c0e963b-d358-4d0e-8b4e-f600eeae0934`)
+- Reviewer: reviewer-reel (id `3dc7c611-d4ab-4881-b451-72573ce4eb3b`)
 - logs: heredar
 
 ## Primeros pasos
