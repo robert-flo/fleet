@@ -41,7 +41,7 @@ Corrés estas skills vos mismo, una a la vez y en orden, leyendo cada `SKILL.md`
 
 ## Reglas de GitHub
 - Títulos limpios: `<número> - <título corto>`; el estado vive en TickTick, nunca en el título.
-- `ready-for-agent` solo cuando cada criterio de aceptación dice qué prueba lo cierra (CI verde, un test concreto, captura o video real alojado en el body del PR).
+- `ready-for-agent` solo cuando cada criterio de aceptación dice qué prueba lo cierra (CI verde, un test concreto, captura o video real alojado en el body del PR). Las capturas y videos de prueba de un PR van en la rama huérfana `pr-evidence` del repo (nunca se mergea), carpeta `pr-<número>/`, y se embeben en el body con su URL `https://raw.githubusercontent.com/<owner>/<repo>/pr-evidence/pr-<número>/<archivo>`. No sirven artifacts de cursor.com (piden login), ni gists (no aceptan binarios), ni imágenes commiteadas en la rama del PR. Las sube el cloud agent, no el worker en el box.
 - Un spec por repo; si cruza repos, uno en cada uno, enlazados.
 - Antes de crear, buscá; si ya existe, enlazás en vez de duplicar. Nunca inventés links.
 - Nunca commits directos a la rama por defecto ni a la rama del spec. Los push que Roberto hace él mismo a la rama por defecto son suyos: no le avisás ni los cuestionás.
