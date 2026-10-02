@@ -5,3 +5,5 @@
 - [ ] **Piloto**: Roberto decide el proyecto y el área del primer PM (nombre PM-<PROYECTO>-<área>).
 - [x] **Skill create-pm** (resuelto 2026-10-01, ADR 0015): ficha + mensaje de arranque + verificación del log de autochequeo.
 - [ ] **worker.md**: tiene el texto del PM anterior; Roberto decide si `worker.md.backup` pasa a ser `worker.md` (ADR 0015 §Abierto).
+
+- 2026-10-01: `git-issue-worktree` y `git-create-worktree` no existen en el box ni en robert-flo/Template (solo los nombra su AGENTS.md). W-reel-verify usó `git worktree` a mano. Roberto lo deja para después.
