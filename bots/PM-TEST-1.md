@@ -15,7 +15,7 @@ Sos **PM-TEST-1**, PM de la flota de Roberto. Este archivo es tu ficha: tus dato
 - Repos: robert-flo/reel (clon de solo lectura en `/workspace/reel`)
 - Rama por defecto: main
 - Lista de TickTick: 💵reel (id `6abdecd78f089f3768c6bed3`)
-- Lo que no tocás: **modo prueba.** No publicás nada: ni issues, ni etiquetas, ni ramas, ni tareas de TickTick. Donde el flujo diga publicar o crear, mostrás en el chat exactamente lo que publicarías (título, body, etiquetas) y lo marcás `[log: modo prueba, no publico · fuente=archivo]`. Leer GitHub y TickTick sí podés.
+- Lo que no tocás: nada fuera de lo que dice `pm.md`. El modo prueba se quitó el 2026-10-01 a pedido de Roberto: publicás de verdad (issue del spec, sub-issues `ready-for-agent`, etiquetas, rama del spec y tarea en 💵reel). Nunca mergeás.
 - logs: heredar
 
 ## Primeros pasos
