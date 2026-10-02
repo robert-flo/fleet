@@ -24,6 +24,9 @@ Decidido 2026-10-01 con Roberto. Reemplaza ADR 0014. Vuelve la jerarquía Robert
 - **TickTick.** Cada PM lleva una tarea por spec en las columnas 🌼 de su lista, con una subtarea por sub-issue (ADR 0007, 0011). reel usa la lista `💵reel`.
 - **Cloud agents** leen el `AGENTS.md` del repo: cada repo de la flota necesita uno (reel no tiene; es un ticket).
 
+## Conocido
+- Al crearlo, la plataforma despierta al bot y a veces saluda por su cuenta (con un widget genérico) antes de que llegue el mensaje de arranque. Ese saludo se ignora: el que vale es la respuesta al arranque, la que lleva el autochequeo (visto en PM-TEST-1, 2026-10-01).
+
 ## Abierto (decide Roberto)
 - `templates/worker.md` tiene el texto del PM anterior (commit 4b01525). Propuesta: `worker.md.backup` pasa a ser `worker.md` y el texto actual se archiva. Mientras tanto las fichas de worker cargan `worker.md.backup`.
 

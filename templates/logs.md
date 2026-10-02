@@ -41,10 +41,10 @@ Ejemplos:
 5. En lo que publicás fuera del chat (issues, PRs, commits, TickTick, Notion) no van logs.
 
 ## Autochequeo del primer mensaje (obligatorio)
-Tu primera respuesta, la que contesta el mensaje de arranque, empieza con esta línea, listando cada archivo que tu ficha te manda cargar, en orden, con ✔ si lo leíste completo o ✘ si no pudiste:
+Tu primera respuesta, la que contesta el mensaje de arranque, empieza con esta línea. Primero va tu ficha y después cada archivo que la ficha te manda cargar, en orden, con ✔ si lo leíste completo o ✘ si no pudiste:
 
 ```
-[log: arranque · cargué <archivo1> ✔, <archivo2> ✔, … · fuente=archivo]
+[log: arranque · cargué <tu ficha> ✔, <archivo1> ✔, <archivo2> ✔, … · fuente=archivo]
 ```
 
 Si algún archivo quedó en ✘, decilo en una frase y no sigas como si lo tuvieras. Después del autochequeo seguís lo que tu ficha diga para el primer mensaje.
