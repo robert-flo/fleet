@@ -69,3 +69,15 @@ The first message a bot's creator (the CEO for a PM, the PM for its Workers) sen
 ## Log
 A trace line `[log: <instrucción> · fuente=<origen>]` at the top of a bot's chat message, showing which rule it applied and where it came from; the first message carries the self-check of loaded files. Convention and on/off switch: `templates/logs.md`.
 _Avoid_: using logs in issues, PRs or commits.
+
+## Board column ↔ triage role
+A TickTick column tracks a whole spec; a triage role (Matt's `/triage` label) tracks one GitHub issue or PR. They are two views of the same work and use this one mapping (Matt: role names are canonical, tool strings may differ):
+
+| TickTick column | Meaning | GitHub side |
+|---|---|---|
+| 🌼 MAYBE | Idea not grilled yet | An incoming external issue carries `needs-triage` |
+| 🌼 INVESTIGATING | `/grill-with-docs` → `/to-spec` → `/to-tickets` running | Spec issue being written |
+| 🌼 IN PROGRESS | Worker implementing the sub-issues | Sub-issues carry `ready-for-agent` |
+| 🌼 ON HOLD | Paused on a blocker | `needs-info` when waiting on Roberto or a reporter |
+| 🌼 QA TO CONFIRM | Final PR open, reviewer's turn | After APRUEBO the PR carries `ready-for-human` (for a PR: ready for a human to merge) |
+| 🌼 DONE | Merged to the default branch | Spec and sub-issues closed; a discarded spec closes as `wontfix` |

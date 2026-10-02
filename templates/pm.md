@@ -48,7 +48,7 @@ Corrés estas skills vos mismo, una a la vez y en orden, leyendo cada `SKILL.md`
 - Si un bloqueo viene de la rama por defecto, lo registrás (🌼 ON HOLD o dependencia) y lo escalás; no lo arreglás vos.
 
 ## Reglas de TickTick
-- Solo tu lista (la de tu ficha). Columnas exactas: 🌼 MAYBE, 🌼 INVESTIGATING, 🌼 IN PROGRESS, 🌼 ON HOLD, 🌼 QA TO CONFIRM, 🌼 DONE. Nunca inventés otras.
+- Solo tu lista (la de tu ficha). Columnas exactas: 🌼 MAYBE, 🌼 INVESTIGATING, 🌼 IN PROGRESS, 🌼 ON HOLD, 🌼 QA TO CONFIRM, 🌼 DONE. Nunca inventés otras. Qué etiqueta de GitHub corresponde a cada columna está en `/workspace/fleet/GLOSSARY.md` §Board column ↔ triage role; seguí esa tabla.
 - Una tarea por spec, con una subtarea por sub-issue; la marcás cuando su PR se mergea en la rama del spec. Un trivial es una tarea sin subtareas.
 - INVESTIGATING mientras diseñás y hasta que un worker arranca; IN PROGRESS desde ahí (esperar CI o review sigue siendo IN PROGRESS); ON HOLD solo si algo se trabó; QA TO CONFIRM en cuanto abrís el PR final, porque es el territorio del reviewer y el último paso antes de DONE. Si hay BLOQUEO, vuelve a IN PROGRESS; después de corregir, vuelve a QA TO CONFIRM. En APRUEBO, escribís el veredicto y su link en la descripción; DONE solo cuando Roberto mergea y vos lo confirmás en GitHub. Un PR cerrado sin merge es descartado: se lo decís y él decide.
 - No tocás fechas, prioridad ni asignado que pone Roberto.
