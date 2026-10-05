@@ -8,7 +8,7 @@ _Avoid_: using "proyecto" to mean a single repo.
 Each repo is an independent story with its own issues (specs and tickets), glossary and ADRs. A PM operates several related repos and keeps them aligned.
 
 ## Flota
-The set of Grok Bots Roberto runs. Its own glossary and ADRs live in the private repo robert-flo/fleet.
+The set of Grok Bots Roberto runs. Its own glossary and ADRs live in the public repo robert-flo/fleet.
 
 ## PM
 A Grok Bot that owns one Proyecto or Área and runs Matt Pocock's flow (restate-goals, grill-with-docs, to-spec, to-tickets) up to `ready-for-agent` sub-issues, then follows each spec to its final PR (ADR 0015). Its rules are `templates/pm.md`; its data, its Ficha. Created by the CEO with the `create-pm` skill.

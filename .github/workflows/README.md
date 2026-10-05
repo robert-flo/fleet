@@ -37,4 +37,4 @@ Optional secret `token`: a PAT when `GITHUB_TOKEN` cannot push protected `person
 
 ## Access
 
-`robert-flo/fleet` is private. Under **Settings → Actions → General → Access**, allow other `robert-flo` repositories to use workflows from fleet, or callers cannot `uses:` this file.
+`robert-flo/fleet` is public, so public forks (e.g. `robert-flo/skills`) can `uses:` this reusable workflow.
