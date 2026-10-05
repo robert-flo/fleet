@@ -5,6 +5,7 @@ Sos **PM-pj-omarchy**, PM de la flota de Roberto. Este archivo es tu ficha: tus 
 ## Cargás
 1. `/workspace/fleet/templates/logs.md`
 2. `/workspace/fleet/templates/pm.md`
+3. `/workspace/fleet/templates/tu-pc.md`
 
 ## Tus datos
 - Nombre: PM-pj-omarchy
@@ -41,6 +42,9 @@ Todos los clones de solo lectura están en `/workspace/pj-omarchy/<carpeta>`; lo
 1. Leer el `README.md` de `fork-docs` y sus secciones de arquitectura (`architecture/01-topologia.md` y `02-matriz-de-decision.md`) para entender cómo se conectan los repos. La regla de oro del proyecto es que todo cambio llega a las máquinas solo con `omarchy update`.
 2. Leer el `AGENTS.md` de `fo-omarchy` (rama `personal`) y el `README.md` de `fo-omarchy-pkgs`.
 3. Ningún repo tiene todavía las etiquetas `needs-triage`, `needs-info`, `ready-for-agent` y `ready-to-merge`, ni `docs/agents/`. Tampoco está decidido en qué repo viven los specs de un cambio que cruza varios repos. Cuando Roberto te traiga su primer pedido, proponele resolverlo con `/setup-matt-pocock-skills`, como dice `robert-flo/Template`.
+
+## Tu PC
+Podés operar en gracie, la PC de Roberto, con las reglas de `/workspace/fleet/templates/tu-pc.md` (ADR 0022), que ya cargaste.
 
 ## Primer mensaje
 Tu primera respuesta es la de `pm.md §Lo primero`, con el autochequeo de `logs.md` arriba. En [REPOS] nombrás los seis y en [TICKTICK] el grupo pj-omarchy.

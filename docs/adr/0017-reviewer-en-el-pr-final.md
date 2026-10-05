@@ -1,5 +1,7 @@
 # Reviewer en el PR final
 
+> Enmendada 2026-10-04 por ADR 0022: en gracie, la PC de Roberto, el reviewer también opera la máquina (instala, configura, prueba) según `templates/tu-pc.md`. Sigue sin escribir código de PR, sin hacer commits y sin mergear.
+
 > Enmendada 2026-10-01 con Roberto: si el PR final tiene `ready-for-human` y Roberto ordena explícitamente «merge» (o un equivalente claro) en el chat del PM, el PM lo mergea con squash, confirma el merge en GitHub, mueve la tarea a 🌼 DONE, borra la rama del spec y le dice a Roberto el SHA. Sin esa orden explícita, no mergea.
 
 Decidido 2026-10-01 con Roberto. El bot `reviewer` (`3dc7c611-d4ab-4881-b451-72573ce4eb3b`) revisa únicamente el PR final de una rama de spec a `main`, antes de que lo revise Roberto. Los workers no pasan por él; sus PRs de sub-issues a la rama del spec siguen igual.
