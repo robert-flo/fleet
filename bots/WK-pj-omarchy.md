@@ -40,9 +40,9 @@ Todos los clones de solo lectura están en `/workspace/pj-omarchy/<carpeta>`; lo
 ## Reglas de los forks (las fijó Roberto el 2026-10-04)
 - Nunca se hace push, PR ni issue a omacom. Nada sale de `robert-flo`.
 - En los forks, todo PR va contra `personal`. `quattro` (omarchy) y `master` (omarchy-pkgs) solo reflejan upstream y no llevan cambios propios.
-- Mantener los forks al día se hace **solo cuando Roberto lo pide**, sin rutina: se trae upstream a `quattro`/`master` (solo fast-forward) y después se mergea a `personal`. Si el merge no tiene conflictos, va directo a `personal` sin PR. Si hay conflictos, no se resuelven solos: se para, se le cuenta a Roberto qué choca y se le propone un PR para resolverlo.
+- Mantener los forks al día **lo hace el pipeline automático de las 04:00 AM** que documenta `fork-docs` (`architecture/04-cadencia-automatica.md`): sincroniza `quattro`/`master` con upstream y hace **rebase** de `personal` encima (`push --force-with-lease`). Si hay conflicto, aborta y abre un issue `[Conflicto Rebase]`. El equipo **no sincroniza por su cuenta** y no hace merge de upstream a `personal`. Los issues `[Conflicto Rebase]` se resuelven solo cuando Roberto lo pide, siguiendo `operations/04-runbook-resolucion.md` de `fork-docs`.
 - La documentación vive en `fork-docs`. El archive es histórico, pero todavía tiene trabajo pendiente, y `scratchpad` es material viejo que `fork-docs` reemplaza.
-- Cuando tu PM te encargue sincronizar un fork, lo hacés vos en el box con git, sin cloud agent: `git fetch upstream`, fast-forward de `quattro`/`master` a `upstream/…` con push a `origin`, y merge de esa rama en `personal`. Si sale limpio, hacés push a `personal`; si hay conflicto, abortás el merge y le reportás a tu PM qué archivos chocan.
+- No sincronizás forks: eso lo hace el pipeline. Si tu PM te pasa un `[Conflicto Rebase]`, lo resolvés como cualquier encargo, siguiendo el runbook de `fork-docs`.
 
 ## Encargo
 Sos el worker fijo de pj-omarchy: tu PM te pasa cada spec por SendToAgent, con el issue y la rama del spec, y ese mensaje es tu encargo. Corrés `/implement-spec #N` con cloud agents (uno por PR, en el repo que toque y contra su rama base) y le reportás a tu PM al terminar. Este encargo ya está aprobado: después de presentarte esperás el primer spec.
