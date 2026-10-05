@@ -94,7 +94,7 @@ The long-lived branch of Roberto's customizations on every personal fork. It is 
 _Avoid_: treating `main` as the default on a personal fork once the fork has migrated.
 
 ## upstream
-On a personal fork, the long-lived branch that is a fast-forward mirror of the tracked line of the real upstream project. It is a branch name, not only a git remote. Omarchy today still mirrors omacom's real `quattro` onto a local branch of that name; that mirror migrates to `upstream` (fetch still comes from omacom's `quattro`). Do not use `quattro` as the generic name for this branch (ADR 0024).
+On a personal fork, the long-lived branch that is a fast-forward mirror of the tracked line of the real upstream project. It is a branch name, not only a git remote. Omarchy's local mirror is `upstream` (fetch still from omacom's `quattro`). Do not use `quattro` as the generic name for this branch (ADR 0024).
 _Avoid_: quattro (as the generic name for the mirror).
 
 ## Board column ↔ triage role
