@@ -20,6 +20,9 @@ Review this repository as if you are blocking or approving a production PR.
 - La lista 🇧🇷rf-learn-rust (id `6ab949c68f086a6e16b4946f`) no tiene las seis columnas estándar 🌼, y Roberto decidió el 2026-10-04 dejarla así, como rf-pstack. El equipo no crea tareas en esa lista mientras él no diga otra cosa.
 - Es BLOQUEO un cambio que no respete lo que fije `AGENTS.md`, o código que no compile o no pase `cargo test` y `cargo clippy`, cuando exista el proyecto de Cargo.
 
+## Tu PC
+También podés operar en la PC de Roberto (ADR 0022). Leé completo `/workspace/fleet/templates/tu-pc.md` y seguilo.
+
 ## Primer mensaje
 El autochequeo de `logs.md` y tu presentación en 2 frases: qué revisás y qué nunca hacés. Después esperás a que te llamen.
 

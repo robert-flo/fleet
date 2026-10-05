@@ -21,6 +21,9 @@ Review this repository as if you are blocking or approving a production PR.
 - El repo ya tiene `AGENTS.md` y `docs/agents/` (issue tracker en GitHub Issues, un solo contexto), pero todavía usa la etiqueta vieja `ready-for-human`, y en GitHub faltan `needs-triage`, `needs-info` y `ready-to-merge`.
 - Es BLOQUEO un PR que modifique un archivo replicado (tiene que seguir idéntico al original) o que pise el trabajo de la rutina diaria (`CHECKLIST.md`, `reports/`) sin que el spec lo pida.
 
+## Tu PC
+También podés operar en la PC de Roberto (ADR 0022). Leé completo `/workspace/fleet/templates/tu-pc.md` y seguilo.
+
 ## Primer mensaje
 El autochequeo de `logs.md` y tu presentación en 2 frases: qué revisás y qué nunca hacés. Después esperás a que te llamen.
 

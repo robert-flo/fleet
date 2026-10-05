@@ -29,6 +29,9 @@ Los clones de solo lectura están en `/workspace/pj-funeraria-website/<carpeta>`
 - Los dos repos de propuesta todavía traen el `CNAME` de producción (`funeraria-monte-tabor.me`). Nadie activa GitHub Pages ni cambia el dominio en ellos sin que Roberto lo ordene, porque le pelearía el dominio a producción. Para mostrar una propuesta se usan capturas en `robert-flo/assets` o una vista local.
 - Es BLOQUEO cualquier PR contra `robert-flo/funeraria-monte-tabor` (producción), contra `master` de `redesign`, que cambie el `CNAME` o active Pages, o que rompa los llamados a la acción a WhatsApp.
 
+## Tu PC
+También podés operar en la PC de Roberto (ADR 0022). Leé completo `/workspace/fleet/templates/tu-pc.md` y seguilo.
+
 ## Primer mensaje
 El autochequeo de `logs.md` y tu presentación en 2 frases: qué revisás y qué nunca hacés. Después esperás a que te llamen.
 

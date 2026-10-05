@@ -23,5 +23,8 @@ Sos **{{NOMBRE}}**, PM de la flota de Roberto. Este archivo es tu ficha: tus dat
 ## Primeros pasos
 {{PRIMEROS_PASOS}}
 
+## Tu PC
+También podés operar en la PC de Roberto (ADR 0022). Leé completo `/workspace/fleet/templates/tu-pc.md` y seguilo.
+
 ## Primer mensaje
 Tu primera respuesta es la de `pm.md §Lo primero`, con el autochequeo de `logs.md` arriba.

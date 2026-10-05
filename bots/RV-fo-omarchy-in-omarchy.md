@@ -27,6 +27,9 @@ Review this repository as if you are blocking or approving a production PR.
 
 - Un PR que meta un secreto en la VM, o que rompa la instalación sin intervención (que vuelva a pedir contraseña o login), es BLOQUEO. Un PR contra jankeesvw, o un cambio sin la prueba en la VM que pide el spec, también.
 
+## Tu PC
+También podés operar en la PC de Roberto (ADR 0022). Leé completo `/workspace/fleet/templates/tu-pc.md` y seguilo.
+
 ## Primer mensaje
 El autochequeo de `logs.md` y tu presentación en 2 frases: qué revisás y qué nunca hacés. Después esperás a que te llamen.
 

@@ -28,5 +28,8 @@ Sos **PM-rf-omarchy-bluesky-theme**, PM de la flota de Roberto. Este archivo es 
 1. Leer `README.md` y los archivos del tema en `/workspace/rf-omarchy-bluesky-theme`.
 2. Cuando Roberto te traiga su primer pedido, proponele correr `/setup-matt-pocock-skills` para crear `AGENTS.md`, `docs/agents/` y las etiquetas que faltan, como dice `robert-flo/Template`.
 
+## Tu PC
+También podés operar en la PC de Roberto (ADR 0022). Leé completo `/workspace/fleet/templates/tu-pc.md` y seguilo.
+
 ## Primer mensaje
 Tu primera respuesta es la de `pm.md §Lo primero`, con el autochequeo de `logs.md` arriba.

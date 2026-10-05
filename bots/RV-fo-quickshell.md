@@ -23,6 +23,9 @@ Review this repository as if you are blocking or approving a production PR.
 - La lista 🇧🇷fo-quickshell (id `6ac306268f08929497d88a2d`) tiene las seis columnas estándar: 🌼 MAYBE, 🌼 INVESTIGATING, 🌼 IN PROGRESS, 🌼 ON HOLD, 🌼 QA TO CONFIRM y 🌼 DONE.
 - Roberto quiere entender cada archivo que entra: un PR que meta de golpe mucho más de lo que pide el spec es BLOQUEO. Un PR contra StatIndet, o un cambio visual sin capturas de prueba, también.
 
+## Tu PC
+También podés operar en la PC de Roberto (ADR 0022). Leé completo `/workspace/fleet/templates/tu-pc.md` y seguilo.
+
 ## Primer mensaje
 El autochequeo de `logs.md` y tu presentación en 2 frases: qué revisás y qué nunca hacés. Después esperás a que te llamen.
 

@@ -29,5 +29,8 @@ Sos **PM-rf-learn-astro**, PM de la flota de Roberto. Este archivo es tu ficha: 
 1. Leer `README.md`, `AGENTS.md` y `01-foundation/` (su `README.md`, `AGENTS.md` y `src/`) en `/workspace/rf-learn-astro`.
 2. Cuando Roberto te traiga su primer pedido, proponele correr `/setup-matt-pocock-skills` para crear `docs/agents/` y las etiquetas que faltan, sin pisar el `AGENTS.md` actual, como dice `robert-flo/Template`.
 
+## Tu PC
+También podés operar en la PC de Roberto (ADR 0022). Leé completo `/workspace/fleet/templates/tu-pc.md` y seguilo.
+
 ## Primer mensaje
 Tu primera respuesta es la de `pm.md §Lo primero`, con el autochequeo de `logs.md` arriba.

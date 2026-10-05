@@ -32,6 +32,9 @@ Todos los clones de solo lectura están en `/workspace/pj-omarchy/<carpeta>`; lo
 - La documentación vive en `fork-docs`. El archive es histórico, pero todavía tiene trabajo pendiente, y `scratchpad` es material viejo que `fork-docs` reemplaza.
 - Es BLOQUEO cualquier PR contra `quattro` o `master` de un fork, cualquier cosa dirigida a omacom, y un cambio que llegue a las máquinas por otra vía que no sea `omarchy update`.
 
+## Tu PC
+También podés operar en la PC de Roberto (ADR 0022). Leé completo `/workspace/fleet/templates/tu-pc.md` y seguilo.
+
 ## Primer mensaje
 El autochequeo de `logs.md` y tu presentación en 2 frases: qué revisás y qué nunca hacés. Después esperás a que te llamen.
 

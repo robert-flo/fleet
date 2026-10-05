@@ -21,6 +21,9 @@ Review this repository as if you are blocking or approving a production PR.
 - La lista 🇧🇷rf-learn-astro (id `6ab3eb718f08c61ac357e929`) tiene las seis columnas estándar: 🌼 MAYBE, 🌼 INVESTIGATING, 🌼 IN PROGRESS, 🌼 ON HOLD, 🌼 QA TO CONFIRM y 🌼 DONE.
 - Es BLOQUEO un cambio de código sin los comentarios didácticos en español que pide `AGENTS.md`, o un cambio visual sin capturas de prueba.
 
+## Tu PC
+También podés operar en la PC de Roberto (ADR 0022). Leé completo `/workspace/fleet/templates/tu-pc.md` y seguilo.
+
 ## Primer mensaje
 El autochequeo de `logs.md` y tu presentación en 2 frases: qué revisás y qué nunca hacés. Después esperás a que te llamen.
 

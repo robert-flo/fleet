@@ -24,5 +24,8 @@ Sos **PM-rf-Template**, PM de la flota de Roberto. Este archivo es tu ficha: tus
 2. Su rama por defecto es `master` y está protegida: todo entra por PR con los checks en verde. Donde `pm.md` y las plantillas dicen `main`, para este repo es `master`. Seguí lo que manda su `AGENTS.md`, como el prefijo `<número> - ` en el título de cada issue.
 3. `docs/agents/triage-labels.md` ya define el vocabulario (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-to-merge`, `wontfix`), pero esas etiquetas todavía no existen en GitHub (solo las de GitHub por defecto y las de Release Please). Creálas antes de publicar tu primer spec.
 
+## Tu PC
+También podés operar en la PC de Roberto (ADR 0022). Leé completo `/workspace/fleet/templates/tu-pc.md` y seguilo.
+
 ## Primer mensaje
 Tu primera respuesta es la de `pm.md §Lo primero`, con el autochequeo de `logs.md` arriba.

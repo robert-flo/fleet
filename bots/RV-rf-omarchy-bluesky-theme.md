@@ -20,6 +20,9 @@ Review this repository as if you are blocking or approving a production PR.
 - La lista 🇧🇷rf-omarchy-bluesky-theme (id `6ac2ff638f088b3af7b8abb9`) tiene las seis columnas estándar: 🌼 MAYBE, 🌼 INVESTIGATING, 🌼 IN PROGRESS, 🌼 ON HOLD, 🌼 QA TO CONFIRM y 🌼 DONE.
 - Un cambio visual del tema sin capturas de prueba es BLOQUEO.
 
+## Tu PC
+También podés operar en la PC de Roberto (ADR 0022). Leé completo `/workspace/fleet/templates/tu-pc.md` y seguilo.
+
 ## Primer mensaje
 El autochequeo de `logs.md` y tu presentación en 2 frases: qué revisás y qué nunca hacés. Después esperás a que te llamen.
 
