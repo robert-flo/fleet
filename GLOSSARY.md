@@ -75,7 +75,7 @@ The fixed team of one project: `PM-<project>`, `WK-<project>` and `RV-<project>`
 _Avoid_: equipo, squad.
 
 ## PC
-Roberto's own computer, gracie (Omarchy, user `tanjiro`, projects in `~/Work/tries`). Every bot of a Trío may do machine work there under `templates/tu-pc.md` (ADR 0022). Repo code still goes through cloud agents; nobody commits or pushes from the PC.
+Roberto's own computer, gracie (Omarchy, user `tanjiro`, projects in `~/Work/tries`). Every bot of a Trío, and RV-pj-fleet (ADR 0022), may do machine work there under `templates/tu-pc.md` (ADR 0022). Repo code still goes through cloud agents; nobody commits or pushes from the PC.
 _Avoid_: host, box (the box is Grok Bot's own computer, not Roberto's).
 
 ## Bitácora

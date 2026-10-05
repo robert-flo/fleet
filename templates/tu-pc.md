@@ -1,6 +1,6 @@
 # Tu PC: gracie (ADR 0022)
 
-Estas reglas valen igual para PM, WK y RV, y **solo en gracie**. Fuera de gracie siguen tus reglas de siempre: el PM y el RV no programan, nadie mergea sin la orden explícita de Roberto, y el código de los PRs va por cloud agent.
+Estas reglas valen igual para PM, WK y RV, y **solo en gracie**. Fuera de gracie siguen tus reglas de siempre: el PM y el RV no programan, nadie mergea a la rama por defecto sin la orden explícita de Roberto, y el código de los PRs va por cloud agent.
 
 ## La máquina
 - **Qué es:** gracie, la PC de Roberto, con machineId `92d09113-c60b-4d1f-9811-eab54c0ca6e9`. Corre Omarchy (Arch con Hyprland), con el usuario `tanjiro` y sudo sin contraseña.
@@ -9,10 +9,10 @@ Estas reglas valen igual para PM, WK y RV, y **solo en gracie**. Fuera de gracie
 - **Si un comando queda esperando aprobación:** le decís a Roberto una vez qué comando es y para qué, y esperás. No buscás otra vía para saltarte la tarjeta.
 
 ## Dos clases de trabajo
-1. **Código de un repo**, es decir, lo que termina en un commit en GitHub. Va siempre por cloud agent, uno por PR (ADR 0018), y por el flujo normal: issue con `ready-for-agent`, el worker, el reviewer y el «merge» de Roberto. En gracie **nunca hacés commit ni push**. El que manda es GitHub. El clon del box (`/workspace/<proyecto>/<carpeta>`) sirve para leer y revisar. El clon de gracie (`~/Work/tries/<carpeta>`) sirve para probar en la máquina real: le hacés `git pull`, `git checkout` de la rama del PR, lo corrés y lo verificás.
+1. **Código de un repo**, es decir, lo que termina en un commit en GitHub. Va siempre por cloud agent, uno por PR (ADR 0018), y por el flujo normal: issue con `ready-for-agent`, el worker, el reviewer y el «merge» de Roberto. En gracie **nunca hacés commit ni push**. El que manda es GitHub. El clon del box, el que dice tu ficha (por ejemplo `/workspace/reel`), sirve para leer y revisar. El clon de gracie (`~/Work/tries/<carpeta>`, o `~/Work/tries/<proyecto>/<carpeta>` en un `pj-`) sirve para probar en la máquina real: le hacés `git pull`, `git checkout` de la rama del PR, lo corrés y lo verificás. Ese clon lo comparten todos los bots y `cursor-agent`, así que al terminar lo dejás con `git status` limpio y en la rama por defecto.
 2. **Trabajo sobre la máquina**: instalar, configurar, probar, diagnosticar o arreglar algo en gracie. Lo hacés vos ahí mismo. Lo que es largo o tiene varios pasos se lo das a `cursor-agent`, lanzado en la carpeta que corresponda, porque gasta cuota de Cursor y no la de Grok Bot, que es chica. Los comandos directos (sudo incluido) son para chequear, verificar y cambios de una línea.
 
-El PM y el RV hacen trabajo sobre la máquina igual que el WK. Esa es la única excepción a «no programás» de `pm.md`, ADR 0017 y sus fichas: nunca escriben código de PR ni hacen commits.
+El PM y el RV hacen trabajo sobre la máquina igual que el WK. Esa es otra excepción a «no programás» de `pm.md`, ADR 0017 y sus fichas: nunca escriben código de PR ni hacen commits.
 
 ## Sin pedir permiso, dentro de estos límites
 - En gracie, el trabajo sobre la máquina no necesita permiso de Roberto. Lo terminás de punta a punta y lo verificás.
@@ -27,10 +27,11 @@ El PM y el RV hacen trabajo sobre la máquina igual que el WK. Esa es la única 
 
 ## Antes de cada cambio al sistema
 Un cambio al sistema es cualquier cosa fuera de la carpeta de un repo: paquetes, servicios, `/etc`, `~/.config`, dotfiles, crontabs y similares.
-1. **Respaldo.** Antes de editar un archivo existente, lo copiás: `cp -a <archivo> <archivo>.bak-<AAAAMMDD-HHMM>`.
+1. **Respaldo.** Antes de editar un archivo existente, lo copiás: `cp -a <archivo> <archivo>.bak-<AAAAMMDD-HHMM>` (con `sudo` si el archivo es de root).
 2. **Bitácora.** **Antes** de hacer el cambio, agregás una línea al final de `/home/tanjiro/Work/tries/CAMBIOS.md`:
    ```
    - 2026-10-04 21:10 · WK-pj-omarchy · `sudo pacman -S foo` · deshacer: `sudo pacman -Rns foo`
+   - 2026-10-04 21:15 · WK-pj-omarchy vía cursor-agent · `sudo systemctl enable --now bar` · deshacer: `sudo systemctl disable --now bar`
    ```
    Si el archivo no existe, lo creás con el encabezado `# Cambios al sistema de gracie`. Solo agregás líneas: nunca borrás ni reescribís las de otros.
 3. **Sin vuelta atrás, no.** Si un cambio no se puede deshacer, no lo hacés: es un impedimento y se lo preguntás a Roberto.
