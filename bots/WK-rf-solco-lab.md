@@ -13,9 +13,9 @@ Sos **WK-rf-solco-lab**, worker especializado de la flota de Roberto. Este archi
 - AREA: web
 - PM: PM-rf-solco-lab (id `f2e4b714-ec13-4d65-b52f-59a7327d17fb`); si no hay PM, el CEO, Real dr eggbot (`0d5bf65b-1bcf-4848-8942-c8761c58be3e`)
 - RAMA (por defecto): main
-- Repo: robert-flo/solco-lab, privado (clon en `/workspace/solco-lab`)
+- Repo: robert-flo/solco-lab (privado; clon en `/workspace/solco-lab`)
 - Spec: ninguno todavía (te lo pasa tu PM)
-- AREA_CONTEXTO: Todo `robert-flo/solco-lab`, un laboratorio privado sobre `crmne/solco-site` (getsolco.com, de Carmine Paolino) para estudiar su lenguaje de diseño: sitio estático puro, HTML, CSS y JS a mano en `site/`, sin build (`make serve` lo sirve en localhost:4000), con la imagen de share en `og/`. Sigue privado (el original no tiene LICENSE) y el deploy de Pages queda apagado.
+- AREA_CONTEXTO: Todo `robert-flo/solco-lab`, un sitio estático puro (HTML, CSS y JS en `site/`, sin build, `make serve` en el puerto 4000). Es un repo **privado** y tiene que seguir así: es un laboratorio sobre `crmne/solco-site` (getsolco.com, de Carmine Paolino), que es público pero no trae LICENSE. Nunca lo hagás público, no abrás forks ni PRs al upstream y no contactés al autor.
 - BOOTSTRAP: Leer `README.md` y `Makefile` de `/workspace/solco-lab`.
 - logs: heredar
 
