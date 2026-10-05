@@ -7,6 +7,7 @@ Roberto's Grok Bot fleet: shared glossary, decisions (ADRs) and open blockers. O
 - `BLOCKERS.md`: pending inputs before creating the first PM
 - `templates/`: rules for PMs (`pm.md`) and workers (`worker.md.backup`), the log convention (`logs.md`), the rules for working on Roberto's PC (`tu-pc.md`, ADR 0022) and the Ficha templates (ADR 0015)
 - `bots/`: one Ficha per live bot, read by the bot from its Mensaje de arranque
+- `.github/workflows/sync-personal-fork.yml`: reusable `workflow_call` that fast-forwards a fork's `upstream` mirror and rebases `personal` (ADR 0024). Callers live in each fork; see `.github/workflows/README.md`.
 - Roles: CEO, PM, Worker and reviewer; the reviewer checks only the final PR to `main`. Each project has a fixed team: its PM, `WK-<project>` and `RV-<project>`, next to `PM-<project>` (ADR 0019)
 
 ## Dónde viven los clones

@@ -1,0 +1,191 @@
+# Reusable personal-fork sync (ADR 0024).
+#
+# Call from a fork (cadence belongs to the caller), e.g.:
+#
+#   name: Sync personal fork
+#   on:
+#     schedule:
+#       - cron: "0 10 * * *"  # 04:00 America/El_Salvador (UTC-6)
+#     workflow_dispatch:
+#   jobs:
+#     sync:
+#       uses: robert-flo/fleet/.github/workflows/sync-personal-fork.yml@main
+#       with:
+#         upstream_repo: mattpocock/skills
+#         upstream_branch: main
+#       permissions:
+#         contents: write
+#         issues: write
+#       secrets: inherit  # or pass token: ${{ secrets.FORK_SYNC_PAT }}
+#
+# No packages/build phase (that is Omarchy-only).
+# Fleet is private: in fleet → Settings → Actions → General → Access,
+# allow other robert-flo repositories to use this workflow.
+# If `personal` is protected, GITHUB_TOKEN may not push; pass a PAT as `token`.
+
+name: Sync personal fork
+
+on:
+  workflow_call:
+    inputs:
+      upstream_repo:
+        description: Real upstream, e.g. mattpocock/skills
+        required: true
+        type: string
+      upstream_branch:
+        description: Branch on the real upstream to mirror
+        required: true
+        type: string
+      mirror_branch:
+        description: Fast-forward mirror branch on this fork (ADR 0024 name)
+        required: false
+        type: string
+        default: upstream
+      personal_branch:
+        description: Long-lived personalizations branch
+        required: false
+        type: string
+        default: personal
+    secrets:
+      token:
+        description: PAT with contents + issues if GITHUB_TOKEN cannot push protected personal
+        required: false
+  workflow_dispatch:
+    inputs:
+      upstream_repo:
+        description: Real upstream, e.g. mattpocock/skills
+        required: true
+        type: string
+      upstream_branch:
+        description: Branch on the real upstream to mirror
+        required: true
+        type: string
+      mirror_branch:
+        description: Fast-forward mirror branch on this fork
+        required: false
+        type: string
+        default: upstream
+      personal_branch:
+        description: Long-lived personalizations branch
+        required: false
+        type: string
+        default: personal
+
+concurrency:
+  group: sync-personal-fork-${{ github.repository }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the calling fork
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+          token: ${{ secrets.token || github.token }}
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Fast-forward mirror, rebase personal, push or open issue
+        env:
+          GH_TOKEN: ${{ secrets.token || github.token }}
+          UPSTREAM_REPO: ${{ inputs.upstream_repo }}
+          UPSTREAM_BRANCH: ${{ inputs.upstream_branch }}
+          MIRROR_BRANCH: ${{ inputs.mirror_branch }}
+          PERSONAL_BRANCH: ${{ inputs.personal_branch }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+
+          if [[ -z "${UPSTREAM_REPO}" || "${UPSTREAM_REPO}" != */* ]]; then
+            echo "upstream_repo must be owner/repo, got: '${UPSTREAM_REPO}'"
+            exit 1
+          fi
+
+          git remote remove real-upstream 2>/dev/null || true
+          git remote add real-upstream "https://github.com/${UPSTREAM_REPO}.git"
+          git fetch --no-tags real-upstream "${UPSTREAM_BRANCH}"
+          git fetch origin
+
+          if ! git show-ref --verify --quiet "refs/remotes/real-upstream/${UPSTREAM_BRANCH}"; then
+            echo "Missing real-upstream/${UPSTREAM_BRANCH} on ${UPSTREAM_REPO}"
+            exit 1
+          fi
+
+          if git show-ref --verify --quiet "refs/remotes/origin/${MIRROR_BRANCH}"; then
+            git checkout -B "${MIRROR_BRANCH}" "origin/${MIRROR_BRANCH}"
+            git merge --ff-only "real-upstream/${UPSTREAM_BRANCH}"
+          else
+            echo "Mirror branch origin/${MIRROR_BRANCH} does not exist yet; creating from real-upstream/${UPSTREAM_BRANCH}"
+            git checkout -B "${MIRROR_BRANCH}" "real-upstream/${UPSTREAM_BRANCH}"
+          fi
+
+          if ! git show-ref --verify --quiet "refs/remotes/origin/${PERSONAL_BRANCH}"; then
+            echo "Missing origin/${PERSONAL_BRANCH}; create and protect it before calling this workflow (ADR 0024)."
+            exit 1
+          fi
+
+          git checkout -B "${PERSONAL_BRANCH}" "origin/${PERSONAL_BRANCH}"
+
+          if git rebase "${MIRROR_BRANCH}"; then
+            echo "Rebase of ${PERSONAL_BRANCH} onto ${MIRROR_BRANCH} succeeded."
+            git push origin "${MIRROR_BRANCH}"
+            git push --force-with-lease origin "${PERSONAL_BRANCH}"
+            exit 0
+          fi
+
+          echo "Rebase conflict; aborting and not pushing."
+          CONFLICT_FILES="$(git diff --name-only --diff-filter=U 2>/dev/null || true)"
+          git rebase --abort
+
+          REPO="${GITHUB_REPOSITORY}"
+          TITLE="[Conflicto Rebase] Sincronización de ${PERSONAL_BRANCH} requiere intervención"
+          BODY="$(cat <<EOF
+          Se detectó un conflicto al rebasear \`${PERSONAL_BRANCH}\` sobre \`${MIRROR_BRANCH}\` (espejo FF de \`${UPSTREAM_REPO}:${UPSTREAM_BRANCH}\`).
+
+          Run: ${RUN_URL}
+
+          ### Archivos en conflicto
+          \`\`\`
+          ${CONFLICT_FILES:-"(no listados)"}
+          \`\`\`
+
+          El workflow abortó el rebase y **no** hizo push (ni force-push) de \`${PERSONAL_BRANCH}\` ni de \`${MIRROR_BRANCH}\`.
+
+          El trío no sincroniza por su cuenta; actúa cuando Roberto lo pide (ADR 0024).
+
+          ### Cómo resolverlo
+          \`\`\`bash
+          git fetch origin
+          git fetch https://github.com/${UPSTREAM_REPO}.git ${UPSTREAM_BRANCH}
+          git checkout ${PERSONAL_BRANCH}
+          git rebase FETCH_HEAD
+          # resolvé los archivos de arriba
+          git add <archivos-resueltos>
+          git rebase --continue
+          git push --force-with-lease origin ${PERSONAL_BRANCH}
+          \`\`\`
+          EOF
+          )"
+
+          OPEN_NUM="$(gh issue list -R "$REPO" --state open --limit 50 --json number,title \
+            --jq '[.[] | select(.title | startswith("[Conflicto Rebase]"))] | .[0].number // empty')"
+
+          if [[ -n "${OPEN_NUM}" ]]; then
+            gh issue comment -R "$REPO" "$OPEN_NUM" --body "$BODY"
+            echo "Updated existing issue #${OPEN_NUM}"
+          else
+            gh issue create -R "$REPO" --title "$TITLE" --body "$BODY"
+            echo "Opened conflict issue"
+          fi
+
+          exit 1
