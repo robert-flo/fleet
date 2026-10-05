@@ -19,7 +19,7 @@ A specialized Grok Bot its PM creates for one spec or trivial with the `create-w
 _Avoid_: executor, agente de ejecución, cloud agent (a Cursor cloud agent is a tool a Worker may launch, not a Worker).
 
 ## Reviewer
-A Grok Bot that reviews only the final PR from a Rama del spec to `main` before Roberto reviews it, then comments `BLOQUEO` or `APRUEBO` (ADR 0017). The PM handles `ready-to-merge`, TickTick and summoning Roberto; the reviewer only comments and reports the verdict. Workers' sub-issue PRs do not go through it.
+A Grok Bot that reviews only the final PR from a Rama del spec to the repo's default branch before Roberto reviews it, then comments `BLOQUEO` or `APRUEBO` (ADR 0017). On most repos that default is `main`; on personal forks it is `personal` (ADR 0024). The PM handles `ready-to-merge`, TickTick and summoning Roberto; the reviewer only comments and reports the verdict. Workers' sub-issue PRs do not go through it.
 
 ## Rama del spec
 The integration branch of one spec, created by the PM from the repo's default branch when the spec issue is published. Workers' PRs merge into it; its single final PR to the default branch is the one Roberto approves (ADR 0011).
@@ -88,6 +88,14 @@ Cursor's command-line agent installed on the PC. Bots launch it in a project fol
 ## Impedimento
 Something a bot cannot solve by itself, the only reason it stops working on the PC (`tu-pc.md`).
 _Avoid_: bloqueo (BLOQUEO is a Reviewer verdict).
+
+## personal
+The long-lived branch of Roberto's customizations on every personal fork. It is the GitHub default branch of the fork, is protected, and takes day-to-day commits only via PRs (Template-style). The RV of that project's trío reviews those PRs, same Template/fleet flow already agreed (ADR 0024).
+_Avoid_: treating `main` as the default on a personal fork once the fork has migrated.
+
+## upstream
+On a personal fork, the long-lived branch that is a fast-forward mirror of the tracked line of the real upstream project. It is a branch name, not only a git remote. Omarchy today still mirrors omacom's real `quattro` onto a local branch of that name; that mirror migrates to `upstream` (fetch still comes from omacom's `quattro`). Do not use `quattro` as the generic name for this branch (ADR 0024).
+_Avoid_: quattro (as the generic name for the mirror).
 
 ## Board column ↔ triage role
 A TickTick column tracks a whole spec; a triage role (Matt's `/triage` label) tracks one GitHub issue or PR. They are two views of the same work and use this one mapping (Matt: role names are canonical, tool strings may differ):
