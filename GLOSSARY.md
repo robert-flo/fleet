@@ -90,11 +90,11 @@ Something a bot cannot solve by itself, the only reason it stops working on the 
 _Avoid_: bloqueo (BLOQUEO is a Reviewer verdict).
 
 ## personal
-The long-lived branch of Roberto's customizations on every personal fork. It is the GitHub default branch of the fork, is protected, and takes day-to-day commits only via PRs (Template-style). The RV of that project's trío reviews those PRs, same Template/fleet flow already agreed (ADR 0024).
-_Avoid_: treating `main` as the default on a personal fork once the fork has migrated.
+The long-lived branch of Roberto's customizations on a personal fork (ADR 0024). On forks that follow the full model it is the GitHub default, is protected, and takes day-to-day commits only via PRs (Template-style); the RV of that project's trío reviews those PRs, same Template/fleet flow already agreed. Exception: `robert-flo/omarchy-pkgs`, where `personal` is a curated pin (lockstep pair + `"personal": true` recipes), not the GitHub default and not an overlay that tracks omacom `master` (ADR 0024 §11).
+_Avoid_: treating `main` as the default on a personal fork once the fork has migrated (except omarchy-pkgs, whose default stays `master`).
 
 ## upstream
-On a personal fork, the long-lived branch that is a fast-forward mirror of the tracked line of the real upstream project. It is a branch name, not only a git remote. Omarchy's local mirror is `upstream` (fetch still from omacom's `quattro`). Do not use `quattro` as the generic name for this branch (ADR 0024).
+On a personal fork that follows ADR 0024, the long-lived branch that is a fast-forward mirror of the tracked line of the real upstream project. It is a branch name, not only a git remote. Omarchy's local mirror is `upstream` (fetch still from omacom's `quattro`). Do not use `quattro` as the generic name for this branch. `robert-flo/omarchy-pkgs` does not keep this mirror of `omacom/omarchy-pkgs:master` (ADR 0024 §11).
 _Avoid_: quattro (as the generic name for the mirror).
 
 ## Board column ↔ triage role
