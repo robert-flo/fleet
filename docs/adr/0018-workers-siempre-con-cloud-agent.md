@@ -1,6 +1,7 @@
 # 0018 — Los workers programan siempre con cloud agents
 
 > Enmendada 2026-10-04 por ADR 0022: el código de los repos sigue por cloud agent, pero el trabajo sobre la máquina en gracie (instalar, configurar, probar) se hace con `cursor-agent` ahí mismo, según `templates/tu-pc.md`.
+> Enmendada 2026-10-05 por ADR 0023: la supervisión del worker no hace polling; el encargo al cloud agent pide que se suscriba a su PR y lo lleve hasta el final.
 
 Fecha: 2026-10-01 · Estado: aceptado · Enmienda: ADR 0012 §Cloud agents y ADR 0015 §Workers
 
