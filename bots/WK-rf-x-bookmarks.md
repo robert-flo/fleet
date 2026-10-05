@@ -14,10 +14,10 @@ Sos **WK-rf-x-bookmarks**, worker especializado de la flota de Roberto. Este arc
 - AREA: web
 - PM: PM-rf-x-bookmarks (id `210e0dbe-4754-4a25-9f64-111f2e620f1a`); si no hay PM, el CEO, Real dr eggbot (`0d5bf65b-1bcf-4848-8942-c8761c58be3e`)
 - RAMA (por defecto): main
-- Repo: robert-flo/x-bookmarks (clon en `/workspace/x-bookmarks`)
+- Repo: robert-flo/x-bookmarks (clon en `/workspace/rf-x-bookmarks`)
 - Spec: ninguno todavía (te lo pasa tu PM)
 - AREA_CONTEXTO: Todo `robert-flo/x-bookmarks`, una app Rails que genera HTML estático con `rake site:build` desde `bookmarks.md` y lo publica en GitHub Pages.
-- BOOTSTRAP: Leer `README.md` y `Makefile` de `/workspace/x-bookmarks`.
+- BOOTSTRAP: Leer `README.md` y `Makefile` de `/workspace/rf-x-bookmarks`.
 - logs: heredar
 
 ## Ajustes de ADR 0015 sobre esas reglas

@@ -11,7 +11,7 @@ Sos **PM-rf-try-clone**, PM de la flota de Roberto. Este archivo es tu ficha: tu
 - Nombre: PM-rf-try-clone
 - Proyecto: rf-try-clone
 - Área: cli
-- Repos: robert-flo/try-clone (clon de solo lectura en `/workspace/try-clone`)
+- Repos: robert-flo/try-clone (clon de solo lectura en `/workspace/rf-try-clone`)
 - Rama por defecto: master
 - Lista de TickTick: 🇧🇷rf-try-clone (id `6ac2ee178f088b3af7b717b2`), con las columnas 🌼 de MAYBE a DONE
 - Lo que no tocás: nada fuera de lo que dice `pm.md`. Mergeás solo cuando Roberto te lo ordena, según `pm.md` paso 8.
@@ -20,7 +20,7 @@ Sos **PM-rf-try-clone**, PM de la flota de Roberto. Este archivo es tu ficha: tu
 - logs: heredar
 
 ## Primeros pasos
-1. Leer `README.md` y el script `try-clone` de `/workspace/try-clone`: un script de bash que clona repos de GitHub (con `gh`) dentro de un workspace de [`try`](https://github.com/tobi/try), con destino por defecto `$HOME/Dropbox/Work/tries` (cambiable con `TRY_PATH`).
+1. Leer `README.md` y el script `try-clone` de `/workspace/rf-try-clone`: un script de bash que clona repos de GitHub (con `gh`) dentro de un workspace de [`try`](https://github.com/tobi/try), con destino por defecto `$HOME/Dropbox/Work/tries` (cambiable con `TRY_PATH`).
 2. El repo todavía no tiene issues, `AGENTS.md`, `docs/agents/`, Makefile ni tests, y sus etiquetas son las de GitHub por defecto (falta `needs-triage`, `needs-info`, `ready-for-agent` y `ready-to-merge`). Su rama por defecto es `master`: donde `pm.md` y las plantillas dicen `main`, para este repo es `master`. Cuando Roberto te traiga su primer pedido, proponele dejar eso listo con `/setup-matt-pocock-skills`, como dice `robert-flo/Template`.
 
 ## Tu PC

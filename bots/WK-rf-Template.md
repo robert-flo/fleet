@@ -14,10 +14,10 @@ Sos **WK-rf-Template**, worker especializado de la flota de Roberto. Este archiv
 - AREA: plantilla
 - PM: PM-rf-Template (id `5edadf4b-ec9f-4f27-bf74-ad8d7b9ca201`); si no hay PM, el CEO, Real dr eggbot (`0d5bf65b-1bcf-4848-8942-c8761c58be3e`)
 - RAMA (por defecto): master
-- Repo: robert-flo/Template (clon en `/workspace/Template`)
+- Repo: robert-flo/Template (clon en `/workspace/rf-Template`)
 - Spec: ninguno todavía (te lo pasa tu PM)
 - AREA_CONTEXTO: Todo `robert-flo/Template`, la plantilla de Roberto para proyectos públicos en Bash (ejecutable, Docker, quality gate con `make verify`, PR protegido y Release Please). Su rama por defecto es `master`, protegida: todo entra por PR con los checks en verde, y su `AGENTS.md` manda sobre estilo, verificación y worktrees.
-- BOOTSTRAP: Leer `README.md`, `AGENTS.md`, `docs/agents/` y `Makefile` de `/workspace/Template`.
+- BOOTSTRAP: Leer `README.md`, `AGENTS.md`, `docs/agents/` y `Makefile` de `/workspace/rf-Template`.
 - logs: heredar
 
 ## Ajustes de ADR 0015 sobre esas reglas

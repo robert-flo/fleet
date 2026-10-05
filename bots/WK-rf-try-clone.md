@@ -14,10 +14,10 @@ Sos **WK-rf-try-clone**, worker especializado de la flota de Roberto. Este archi
 - AREA: cli
 - PM: PM-rf-try-clone (id `affa5b5f-11ca-420d-8828-e63e380606d3`); si no hay PM, el CEO, Real dr eggbot (`0d5bf65b-1bcf-4848-8942-c8761c58be3e`)
 - RAMA (por defecto): master
-- Repo: robert-flo/try-clone (clon en `/workspace/try-clone`)
+- Repo: robert-flo/try-clone (clon en `/workspace/rf-try-clone`)
 - Spec: ninguno todavía (te lo pasa tu PM)
 - AREA_CONTEXTO: Todo `robert-flo/try-clone`, un script de bash que clona repos de GitHub con `gh` dentro de un workspace de `try` (https://github.com/tobi/try). Su rama por defecto es `master`.
-- BOOTSTRAP: Leer `README.md` y el script `try-clone` de `/workspace/try-clone`.
+- BOOTSTRAP: Leer `README.md` y el script `try-clone` de `/workspace/rf-try-clone`.
 - logs: heredar
 
 ## Ajustes de ADR 0015 sobre esas reglas
