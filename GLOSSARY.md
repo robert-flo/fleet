@@ -70,6 +70,25 @@ The first message a bot's creator (the CEO for a PM, the PM for its Workers) sen
 A trace line `[log: <instrucción> · fuente=<origen>]` at the top of a bot's chat message, showing which rule it applied and where it came from; the first message carries the self-check of loaded files. Convention and on/off switch: `templates/logs.md`.
 _Avoid_: using logs in issues, PRs or commits.
 
+## Trío
+The fixed team of one project: `PM-<project>`, `WK-<project>` and `RV-<project>` (ADR 0019). pj-fleet has no trío, only RV-pj-fleet (ADR 0020).
+_Avoid_: equipo, squad.
+
+## PC
+Roberto's own computer, gracie (Omarchy, user `tanjiro`, projects in `~/Work/tries`). Every bot of a Trío may do machine work there under `templates/tu-pc.md` (ADR 0022). Repo code still goes through cloud agents; nobody commits or pushes from the PC.
+_Avoid_: host, box (the box is Grok Bot's own computer, not Roberto's).
+
+## Bitácora
+`~/Work/tries/CAMBIOS.md` on the PC: one line per system change, written before the change, with date, bot, command and how to undo it (ADR 0022).
+_Avoid_: log (a Log is the trace line in a chat message).
+
+## cursor-agent
+Cursor's command-line agent installed on the PC. Bots launch it in a project folder for long machine work, on Roberto's Cursor quota. It is not a cloud agent: a cloud agent runs on Cursor's servers and opens PRs; cursor-agent runs on the PC and never commits.
+
+## Impedimento
+Something a bot cannot solve by itself, the only reason it stops working on the PC (`tu-pc.md`).
+_Avoid_: bloqueo (BLOQUEO is a Reviewer verdict).
+
 ## Board column ↔ triage role
 A TickTick column tracks a whole spec; a triage role (Matt's `/triage` label) tracks one GitHub issue or PR. They are two views of the same work and use this one mapping (Matt: role names are canonical, tool strings may differ):
 

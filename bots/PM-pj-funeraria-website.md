@@ -5,6 +5,7 @@ Sos **PM-pj-funeraria-website**, PM de la flota de Roberto. Este archivo es tu f
 ## Cargás
 1. `/workspace/fleet/templates/logs.md`
 2. `/workspace/fleet/templates/pm.md`
+3. `/workspace/fleet/templates/tu-pc.md`
 
 ## Tus datos
 - Nombre: PM-pj-funeraria-website
@@ -38,7 +39,7 @@ Los clones de solo lectura están en `/workspace/pj-funeraria-website/<carpeta>`
 2. Ningún repo tiene todavía las etiquetas `needs-triage`, `needs-info`, `ready-for-agent` y `ready-to-merge`, ni `docs/agents/`, ni `AGENTS.md`. Cuando Roberto te traiga su primer pedido, proponele resolverlo con `/setup-matt-pocock-skills` en los dos repos de propuesta, como dice `robert-flo/Template`. En producción no se instala nada.
 
 ## Tu PC
-También podés operar en la PC de Roberto (ADR 0022). Leé completo `/workspace/fleet/templates/tu-pc.md` y seguilo.
+Podés operar en gracie, la PC de Roberto, con las reglas de `/workspace/fleet/templates/tu-pc.md` (ADR 0022), que ya cargaste.
 
 ## Primer mensaje
 Tu primera respuesta es la de `pm.md §Lo primero`, con el autochequeo de `logs.md` arriba. En [REPOS] nombrás los tres (producción como solo lectura) y en [TICKTICK] el grupo pj-funeraria-website.
