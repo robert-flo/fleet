@@ -7,7 +7,7 @@ Reusable workflow: `sync-personal-fork.yml`, invoked with `workflow_call` from a
 1. Fast-forwards the fork’s mirror branch (`upstream` by default) from `upstream_repo` / `upstream_branch`.
 2. Rebases `personal` onto that mirror.
 3. On success: pushes the mirror (regular) and `personal` (`--force-with-lease`).
-4. On conflict: `git rebase --abort`, opens or comments an issue titled `[Conflicto Rebase]…`, does not push.
+4. On conflict: `git rebase --abort`, opens or comments an issue titled `[Conflicto Rebase]…`, does not push. The issue tells a human to fast-forward and push the **mirror** (`upstream`), rebase `personal` onto that mirror, then `--force-with-lease` `personal` — not onto `FETCH_HEAD` of the real upstream.
 
 No package build (Omarchy-only). Do not add a skills or Omarchy caller in this repo.
 

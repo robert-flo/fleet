@@ -161,14 +161,20 @@ jobs:
 
           El workflow abortó el rebase y **no** hizo push (ni force-push) de \`${PERSONAL_BRANCH}\` ni de \`${MIRROR_BRANCH}\`.
 
-          El trío no sincroniza por su cuenta; actúa cuando Roberto lo pide (ADR 0024).
+          El trío (o RV-pj-fleet en forks de pj-fleet) no sincroniza por su cuenta; actúa cuando Roberto lo pide (ADR 0024).
 
           ### Cómo resolverlo
+          Rebaseá \`${PERSONAL_BRANCH}\` sobre el **espejo** \`${MIRROR_BRANCH}\` (FF desde \`${UPSTREAM_REPO}:${UPSTREAM_BRANCH}\`), no sobre el tip del remoto real. Dejá el espejo al día y después force-with-lease de personal (ADR 0024 §6).
+
           \`\`\`bash
           git fetch origin
-          git fetch https://github.com/${UPSTREAM_REPO}.git ${UPSTREAM_BRANCH}
+          git remote add real-upstream https://github.com/${UPSTREAM_REPO}.git 2>/dev/null || git remote set-url real-upstream https://github.com/${UPSTREAM_REPO}.git
+          git fetch real-upstream ${UPSTREAM_BRANCH}
+          git checkout ${MIRROR_BRANCH}
+          git merge --ff-only real-upstream/${UPSTREAM_BRANCH}
+          git push origin ${MIRROR_BRANCH}
           git checkout ${PERSONAL_BRANCH}
-          git rebase FETCH_HEAD
+          git rebase ${MIRROR_BRANCH}
           # resolvé los archivos de arriba
           git add <archivos-resueltos>
           git rebase --continue
