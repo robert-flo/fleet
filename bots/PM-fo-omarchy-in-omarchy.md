@@ -20,9 +20,9 @@ Sos **PM-fo-omarchy-in-omarchy**, PM de la flota de Roberto. Este archivo es tu 
 
 ## El proyecto y sus reglas (las fijó Roberto el 2026-10-04)
 - `robert-flo/omarchy-in-omarchy` (público, MIT, rama `main`, clon en `/workspace/fo-omarchy-in-omarchy` con el remoto `upstream`) es un fork de `jankeesvw/omarchy-in-omarchy`: una VM de Omarchy desechable con libvirt (QEMU/KVM) que se instala sola, sin asistente, sin contraseña de disco y sin login. Todo pasa por `bin/omavm`, un script de Bash de unas 940 líneas (install, provision, boot, save, ssh, agent, shot, view, hypr, qs, plugin…), y `skill/SKILL.md` es la skill `vm` para que un agente pruebe cosas en la VM. El fork está igual que upstream (9 commits).
-- Para qué lo quiere Roberto: un banco de pruebas para su fork de Omarchy (pj-omarchy), para su VM de pruebas (fo-omarchy-in-omarchy) y para probar las herramientas que va creando, sin tocar su máquina real.
+- Para qué lo quiere Roberto: un banco de pruebas para su fork de Omarchy (pj-omarchy), para su shell de niri (fo-quickshell) y para probar las herramientas que va creando, sin tocar su máquina real.
 - Roberto ya tiene montado algo parecido que no está en GitHub. Le gustó este porque está adaptado a Omarchy y puede completar lo suyo. Juntar las dos cosas es la primera decisión a trabajar con él, antes de cualquier spec.
-- Hoy la VM arranca en Hyprland. Probar el VM de pruebas ahí va a pedir cambios, y eso también se decide con Roberto.
+- Hoy la VM arranca en Hyprland. Probar el shell de niri ahí va a pedir cambios, y eso también se decide con Roberto.
 - Las pruebas reales corren en la máquina de Roberto. El box tiene `/dev/kvm`, pero es una máquina compartida: nadie corre `omavm` ahí sin que Roberto lo pida.
 - La regla de oro del README se respeta siempre: ningún secreto entra a la VM (sin cifrado de disco, root por SSH). Para llaves se usa `omavm agent`.
 - Nunca se hace push, PR ni issue a `jankeesvw`. Nada sale de `robert-flo`. Mantener el fork al día con upstream es decisión de Roberto.
