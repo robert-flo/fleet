@@ -29,7 +29,7 @@ Clon de solo lectura en `/workspace/pj-niri/rf-omarchy-workstation`. Los repos q
 ## Reglas del proyecto (fijadas por Roberto el 2026-10-25, ADR 0026)
 - workstation es la infraestructura de Roberto; Domina es solo su vida y no se toca desde este trío.
 - Los ADR los diseña Roberto con el CEO (Real dr eggbot). Este trío solo ejecuta migraciones ya decididas en un ADR; si algo no está decidido, se lo devolvés al CEO.
-- Tablero: **TickTick orquesta el trabajo**, lista `workstation` (id `6aded1258f08640fc39bc525`, grupo `workstation` `6aded1228f08dc41142cd579`), columnas Inbox (`6aded12b8f08f395053be890`) → Understand (`6aded12c8f08408071110005`: evaluar el repo y decidir absorber, orquestar o archivar) → Design (`6aded12d8f081c311c058fd5`: grill-me, to-spec, to-tickets) → Build (`6aded12f8f08408071110039`: WK implementa y RV revisa, PR mergeado) → Deploy (`6aded1308f08408071110058`: despliegue idempotente en gracie, dos corridas seguidas sin cambios) → Improve (`6aded1318f08408071110063`: ritual semanal, solo mejorar lo existente, sin features nuevas). Tope: 2 en Build y 1 en Deploy. Cada tarea es un repo con etiquetas de origen (pj, fork, ro), proyecto y acción; no las borrés.
+- Tablero: **TickTick orquesta el trabajo**, lista `workstation` (id `6aded1258f08640fc39bc525`, grupo `workstation` `6aded1228f08dc41142cd579`), columnas Inbox (`6aded12b8f08f395053be890`) → Understand (`6aded12c8f08408071110005`: evaluar el repo y decidir absorber, orquestar o archivar) → Design (`6aded12d8f081c311c058fd5`: grill-me, to-spec, to-tickets) → Build (`6aded12f8f08408071110039`: WK implementa y RV revisa, PR mergeado) → Deploy (`6aded1308f08408071110058`: despliegue idempotente en omarchy, dos corridas seguidas sin cambios) → Improve (`6aded1318f08408071110063`: ritual semanal, solo mejorar lo existente, sin features nuevas). Tope: 2 en Build y 1 en Deploy. Cada tarea es un repo con etiquetas de origen (pj, fork, ro), proyecto y acción; no las borrés.
 - **GitHub Issues solo para specs y sub-issues**, en el repo hub salvo que el ADR diga otro.
 - Inventario de referencia: `/workspace/pj-niri/inventario-repos.md` y la base de Notion https://app.notion.com/p/26eeae2a241a4decbb6097757bdb8269.
 - Regla de dueño único: cada archivo de `$HOME` o `/` tiene un solo repo dueño. Se prefiere orquestar (instalar o enlazar) a absorber la historia de un repo con CI propio.
@@ -40,7 +40,7 @@ Clon de solo lectura en `/workspace/pj-niri/rf-omarchy-workstation`. Los repos q
 3. Si el hub no tiene las etiquetas de triage ni `docs/agents/`, proponele a Roberto resolverlo con `/setup-matt-pocock-skills` en su primer pedido.
 
 ## Tu PC
-Podés operar en gracie, la PC de Roberto, con las reglas de `/workspace/fleet/templates/tu-pc.md` (ADR 0022), que ya cargaste.
+Podés operar en omarchy, la PC de Roberto, con las reglas de `/workspace/fleet/templates/tu-pc.md` (ADR 0022), que ya cargaste.
 
 ## Primer mensaje
 Tu primera respuesta es la de `pm.md §Lo primero`, con el autochequeo de `logs.md` arriba. En [REPOS] nombrás el hub y en [TICKTICK] la lista workstation.

@@ -38,7 +38,7 @@ Los clones están en `/workspace/pj-paolino/<carpeta>`. Ninguno tiene configurad
 3. Ningún repo tiene todavía issues, `docs/agents/` ni las etiquetas `needs-triage`, `needs-info`, `ready-for-agent` y `ready-to-merge`. Cuando Roberto te traiga su primer pedido, proponele dejar eso listo con `/setup-matt-pocock-skills`, como dice `robert-flo/Template`, incluido reemplazar el `AGENTS.md` de Carmine en paolino-lab.
 
 ## Tu PC
-Podés operar en gracie, la PC de Roberto, con las reglas de `/workspace/fleet/templates/tu-pc.md` (ADR 0022), que ya cargaste.
+Podés operar en omarchy, la PC de Roberto, con las reglas de `/workspace/fleet/templates/tu-pc.md` (ADR 0022), que ya cargaste.
 
 ## Primer mensaje
 Tu primera respuesta es la de `pm.md §Lo primero`, con el autochequeo de `logs.md` arriba. En [REPOS] nombrás los dos y en [TICKTICK] el grupo pj-paolino.
