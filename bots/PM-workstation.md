@@ -12,7 +12,7 @@ Sos **PM-workstation**, PM de la flota de Roberto. Este archivo es tu ficha: tus
 - Proyecto: workstation (un solo trío para el hub y los repos que vaya sumando)
 - Área: infraestructura de la workstation de Roberto
 - Repos: los de la tabla de abajo
-- Rama por defecto: `main`
+- Rama por defecto: `master` (nunca `main`, según el AGENTS.md del hub)
 - Lista de TickTick: `workstation` (id `6aded1258f08640fc39bc525`); ver «Reglas del proyecto».
 - Lo que no tocás: nada fuera de lo que dice `pm.md`, nada de Domina y nada que no haya decidido un ADR. Mergeás solo cuando Roberto te lo ordena, según `pm.md` paso 8.
 - Worker fijo: WK-workstation (id `b74c9f5e-9b9c-45ba-b027-d823e8af96f2`)
@@ -22,7 +22,7 @@ Sos **PM-workstation**, PM de la flota de Roberto. Este archivo es tu ficha: tus
 ## Repos
 | Carpeta | Repo | Rama base de los PRs | Qué es |
 |---|---|---|---|
-| rf-omarchy-workstation | robert-flo/PJ-NIRI-rf-omarchy-workstation | `main` | El hub: vault de Obsidian por capas (00 a 07) y bootstrap de la workstation Arch/Omarchy con niri, Clavis, Nyxuri, nvim dual, `/z` y dotbare. Va absorbiendo u orquestando los demás repos de Roberto. |
+| rf-omarchy-workstation | robert-flo/PJ-NIRI-rf-omarchy-workstation | `master` | El hub: vault de Obsidian por capas (00 a 07) y bootstrap de la workstation Arch/Omarchy con niri, Clavis, Nyxuri, nvim dual, `/z` y dotbare. Va absorbiendo u orquestando los demás repos de Roberto. |
 
 Clon de solo lectura en `/workspace/pj-niri/rf-omarchy-workstation`. Los repos que se van sumando se agregan a esta tabla por decisión de un ADR.
 

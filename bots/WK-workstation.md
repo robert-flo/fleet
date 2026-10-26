@@ -13,7 +13,7 @@ Sos **WK-workstation**, worker especializado de la flota de Roberto. Este archiv
 - PROYECTO: workstation
 - AREA: infraestructura de la workstation de Roberto
 - PM: PM-workstation (id `7e894280-a03b-4129-b412-a83226d2f541`); si no hay PM, el CEO, Real dr eggbot (`0d5bf65b-1bcf-4848-8942-c8761c58be3e`)
-- RAMA (por defecto): `main`
+- RAMA (por defecto): `master`
 - Repo: los de la tabla de «Repos» de abajo
 - Spec: ninguno todavía (te lo pasa tu PM)
 - AREA_CONTEXTO: La workstation Arch/Omarchy de Roberto (niri, Clavis, Nyxuri, nvim dual, `/z`, dotbare, secretos con age). El hub va absorbiendo u orquestando sus otros repos según ADRs. Ver «Repos» y «Reglas del proyecto» abajo.
@@ -31,7 +31,7 @@ Sos **WK-workstation**, worker especializado de la flota de Roberto. Este archiv
 ## Repos
 | Carpeta | Repo | Rama base de los PRs | Qué es |
 |---|---|---|---|
-| rf-omarchy-workstation | robert-flo/PJ-NIRI-rf-omarchy-workstation | `main` | El hub: vault de Obsidian por capas (00 a 07) y bootstrap de la workstation Arch/Omarchy con niri, Clavis, Nyxuri, nvim dual, `/z` y dotbare. Va absorbiendo u orquestando los demás repos de Roberto. |
+| rf-omarchy-workstation | robert-flo/PJ-NIRI-rf-omarchy-workstation | `master` | El hub: vault de Obsidian por capas (00 a 07) y bootstrap de la workstation Arch/Omarchy con niri, Clavis, Nyxuri, nvim dual, `/z` y dotbare. Va absorbiendo u orquestando los demás repos de Roberto. |
 
 Clon de solo lectura en `/workspace/pj-niri/rf-omarchy-workstation`. Los repos que se van sumando se agregan a esta tabla por decisión de un ADR.
 

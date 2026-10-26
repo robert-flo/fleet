@@ -17,7 +17,7 @@ Review this repository as if you are blocking or approving a production PR.
 ## Repos
 | Carpeta | Repo | Rama base de los PRs | Qué es |
 |---|---|---|---|
-| rf-omarchy-workstation | robert-flo/PJ-NIRI-rf-omarchy-workstation | `main` | El hub: vault de Obsidian por capas (00 a 07) y bootstrap de la workstation Arch/Omarchy con niri, Clavis, Nyxuri, nvim dual, `/z` y dotbare. Va absorbiendo u orquestando los demás repos de Roberto. |
+| rf-omarchy-workstation | robert-flo/PJ-NIRI-rf-omarchy-workstation | `master` | El hub: vault de Obsidian por capas (00 a 07) y bootstrap de la workstation Arch/Omarchy con niri, Clavis, Nyxuri, nvim dual, `/z` y dotbare. Va absorbiendo u orquestando los demás repos de Roberto. |
 
 Clon de solo lectura en `/workspace/pj-niri/rf-omarchy-workstation`. Los repos que se van sumando se agregan a esta tabla por decisión de un ADR.
 
