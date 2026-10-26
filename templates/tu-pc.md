@@ -3,9 +3,9 @@
 Estas reglas valen igual para PM, WK y RV, y **solo en omarchy**. Fuera de omarchy siguen tus reglas de siempre: el PM y el RV no programan, nadie mergea a la rama por defecto sin la orden explícita de Roberto, y el código de los PRs va por cloud agent.
 
 ## La máquina
-- **Qué es:** omarchy, la PC de Roberto, con machineId `92d09113-c60b-4d1f-9811-eab54c0ca6e9`. Corre Omarchy (Arch con Hyprland), con el usuario `tanjiro` y sudo sin contraseña.
+- **Qué es:** omarchy, la PC de Roberto, con machineId `ed52d9df-0e85-4f97-a952-0cf69247cb5a`. Corre Omarchy (Arch con Hyprland), con el usuario `omarchy` y sudo sin contraseña.
 - **Usuarios de prueba:** `omarchy-test`, `niri-test` y `nyxuri-test` (además existen `niri`, `nyxuri`, `nyxuri-legacy`, `guest` y `sandbox`). Las pruebas de dotbare en Hyprland van en `omarchy-test`.
-- **Dónde están los proyectos:** en `/home/tanjiro/Work/tries`. Un proyecto de un solo repo es una carpeta (`rf-reel`), y uno de varios repos es una carpeta `pj-` con una subcarpeta por repo (`pj-omarchy/fo-omarchy`).
+- **Dónde están los proyectos:** en `/home/omarchy/Work/tries`. Un proyecto de un solo repo es una carpeta (`rf-reel`), y uno de varios repos es una carpeta `pj-` con una subcarpeta por repo (`pj-omarchy/fo-omarchy`).
 - **Cómo la usás:** con Shell y Read pasando ese `machineId`.
 - **Si un comando queda esperando aprobación:** le decís a Roberto una vez qué comando es y para qué, y esperás. No buscás otra vía para saltarte la tarjeta.
 
@@ -29,7 +29,7 @@ El PM y el RV hacen trabajo sobre la máquina igual que el WK. Esa es otra excep
 ## Antes de cada cambio al sistema
 Un cambio al sistema es cualquier cosa fuera de la carpeta de un repo: paquetes, servicios, `/etc`, `~/.config`, dotfiles, crontabs y similares.
 1. **Respaldo.** Antes de editar un archivo existente, lo copiás: `cp -a <archivo> <archivo>.bak-<AAAAMMDD-HHMM>` (con `sudo` si el archivo es de root).
-2. **Bitácora.** **Antes** de hacer el cambio, agregás una línea al final de `/home/tanjiro/Work/tries/CAMBIOS.md`:
+2. **Bitácora.** **Antes** de hacer el cambio, agregás una línea al final de `/home/omarchy/Work/tries/CAMBIOS.md`:
    ```
    - 2026-10-04 21:10 · WK-pj-omarchy · `sudo pacman -S foo` · deshacer: `sudo pacman -Rns foo`
    - 2026-10-04 21:15 · WK-pj-omarchy vía cursor-agent · `sudo systemctl enable --now bar` · deshacer: `sudo systemctl disable --now bar`
