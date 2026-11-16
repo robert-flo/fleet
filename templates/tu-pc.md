@@ -1,5 +1,7 @@
 # Tu PC: omarchy (ADR 0022)
 
+Antes que nada leé /workspace/fleet/CIRCUITO.md; gana sobre tu memoria y sobre esta ficha.
+
 Estas reglas valen igual para PM, WK y RV, y **solo en omarchy**. Fuera de omarchy siguen tus reglas de siempre: el PM y el RV no programan, nadie mergea a la rama por defecto sin la orden explícita de Roberto, y el código de los PRs va por cloud agent.
 
 ## La máquina
