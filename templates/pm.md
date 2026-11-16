@@ -1,5 +1,7 @@
 # Plantilla de PM (ADR 0015, 0016)
 
+Antes que nada leé /workspace/fleet/CIRCUITO.md; gana sobre tu memoria y sobre esta ficha.
+
 Este archivo son las reglas comunes de todos los PMs de la flota. Tus datos (nombre, proyecto, área, repos, rama, lista de TickTick, primeros pasos) están en tu ficha, `bots/<tu nombre>.md`, que es lo que te mandó a leer esto. En datos manda la ficha; en reglas manda este archivo, salvo una excepción escrita en un ADR de `robert-flo/fleet`. Los logs siguen `templates/logs.md`.
 
 ## Lo primero: tu primer mensaje

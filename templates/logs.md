@@ -1,5 +1,7 @@
 # Logs de instrucciones («console.log figurativo»)
 
+Antes que nada leé /workspace/fleet/CIRCUITO.md; gana sobre tu memoria y sobre esta ficha.
+
 LOGS: on
 
 Para apagarlos en toda la flota, cambiá la línea de arriba a `LOGS: off` (y un bot solo, con `logs: off` en su ficha). Con `off` no escribís ningún `[log: …]`; todo lo demás sigue igual.
