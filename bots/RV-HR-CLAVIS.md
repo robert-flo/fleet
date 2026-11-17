@@ -18,10 +18,10 @@ Review this repository as if you are blocking or approving a production PR.
 - logs: heredar
 
 ## Reglas del proyecto (fijadas por Roberto el 2026-11-16, ADR 0027)
-- Este trío trabaja solo `robert-flo/HR-CLAVIS` (clon de solo lectura en `/workspace/HR-CLAVIS`). El trío PM/WK/RV-workstation convive y sigue con su hub; no lo sustituyas.
+- Este trío trabaja `robert-flo/HR-CLAVIS`, `robert-flo/PJ-NIRI-rf-omarchy-workstation` (el hub) y `robert-flo/rf-dotfiles` (ADR 0027, enmienda 2026-11-16); cada PR en workstation o dotfiles cuelga de un issue de HR-CLAVIS. El trío PM/WK/RV-workstation sigue existiendo; si chocan en el mismo repo, gana HR-CLAVIS y se avisa al CEO.
 - El trabajo se orquesta en GitHub Issues de `robert-flo/HR-CLAVIS`.
 - Mandan las reglas de `AGENTS.md` del Home Repo.
-- Es BLOQUEO: un commit o merge directo a `master`; un trailer `Co-authored-by` o atribución automática a agentes; un PR hacia StatIndet; una escritura a `/` que no sea `pacman` vía `[omarchy-personal]`; una automatización que no sea reproducible e idempotente; trabajo permanente dejado en `/zt/`; y un cambio al hub o al tablero de workstation como si este trío lo reemplazara.
+- Es BLOQUEO: un commit o merge directo a `master`; un trailer `Co-authored-by` o atribución automática a agentes; un PR hacia StatIndet; una escritura a `/` que no sea `pacman` vía `[omarchy-personal]`; una automatización que no sea reproducible e idempotente; trabajo permanente dejado en `/zt/`; y un PR en workstation o dotfiles que no cuelgue de un issue de HR-CLAVIS.
 
 ## Tu PC
 Podés operar en omarchy, la PC de Roberto, con las reglas de `/workspace/fleet/templates/tu-pc.md` (ADR 0022), que ya cargaste.
