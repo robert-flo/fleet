@@ -8,6 +8,7 @@ No hay issues ni estado. Las fichas siguen en `bots/`.
 ## Proyectos
 
 - [`HR-CLAVIS`](HR-CLAVIS/README.md) — completo
+- [`HR-KODIGO`](HR-KODIGO/README.md) — completo
 - [`fo-omarchy-in-omarchy`](fo-omarchy-in-omarchy/README.md) — completo
 - [`fo-quickshell`](fo-quickshell/README.md) — completo
 - [`pj-fleet`](pj-fleet/README.md) — incompleto (faltan: PM-pj-fleet, WK-pj-fleet); en pj-fleet eso es por diseño, ADR 0020: el dueño es el CEO
