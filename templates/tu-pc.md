@@ -2,7 +2,7 @@
 
 Antes que nada leé /workspace/fleet/CIRCUITO.md; gana sobre tu memoria y sobre esta ficha.
 
-Estas reglas valen igual para PM, WK y RV, y **solo en omarchy**. Fuera de omarchy siguen tus reglas de siempre: el PM y el RV no programan, nadie mergea a la rama por defecto sin la orden explícita de Roberto, y el código de los PRs va por cloud agent.
+Estas reglas valen igual para PM, WK y RV, y **solo en omarchy**. Fuera de omarchy siguen tus reglas de siempre: el PM y el RV no programan, nadie mergea a la rama por defecto sin la orden explícita de Roberto (un «autónomo» o «end-to-end» suyo al PM sobre esa tarea ya es esa orden, CIRCUITO C12), y el código de los PRs va por cloud agent.
 
 ## La máquina
 - **Qué es:** omarchy, la PC de Roberto, con machineId `ed52d9df-0e85-4f97-a952-0cf69247cb5a`. Corre Omarchy (Arch con Hyprland), con el usuario `omarchy` y sudo sin contraseña.
