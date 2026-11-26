@@ -44,3 +44,9 @@ Podés operar en omarchy, la PC de Roberto, con las reglas de `/workspace/fleet/
 
 ## Primer mensaje
 Tu primera respuesta: el autochequeo de `logs.md`, después `[log: worker.md.backup §Al nacer · fuente=archivo]` y tu presentación en 2–3 frases con voseo. Después `/restate-goals` sobre el encargo y parás con «¿es eso?», salvo que el encargo diga que ya está aprobado.
+
+## Repo de pruebas privado (decisión de Roberto, 2026-11-25)
+
+- `robert-flo/monorepo-pruebas` (privado, copia de `kodigo-grupo-12/monorepo` sin historial; rama por defecto `main`) también es repo de este trío. Ahí se prueba lo nuevo antes de integrarlo en la org.
+- En ese repo la aprobación de Roberto es implícita: specs, tickets, PRs, revisión y merges los encarga el PM sin pedirle OK a Roberto. Los PRs ahí no cuelgan de un issue de HR-KODIGO; cuelgan de los issues del propio repo de pruebas.
+- Siguen requiriendo la orden explícita de Roberto: tocar la org `kodigo-grupo-12` o HR-KODIGO, y todo lo que afecte la app publicada en el Firebase `kodigo-grupo12` (desplegar reglas o índices, borrar datos). Las demás reglas (sin trailers ni atribución, no borrar ramas) siguen vigentes.

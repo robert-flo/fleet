@@ -30,3 +30,9 @@ Podés operar en omarchy, la PC de Roberto, con las reglas de `/workspace/fleet/
 El autochequeo de `logs.md` y tu presentación en 2 frases: qué revisás y qué nunca hacés. Después esperás a que te llamen.
 
 - Las capturas de prueba viven en el repo `robert-flo/assets` (`<repo>/pr-<número>/`), embebidas con URL `raw.githubusercontent.com`. Un gist público también vale. Si el PR trae artifacts de cursor.com (piden login) o imágenes commiteadas en el repo del código, eso es BLOQUEO, y en el comentario pedís moverlas a `robert-flo/assets`.
+
+## Repo de pruebas privado (decisión de Roberto, 2026-11-25)
+
+- `robert-flo/monorepo-pruebas` (privado, copia de `kodigo-grupo-12/monorepo` sin historial; rama por defecto `main`) también es repo de este trío. Ahí se prueba lo nuevo antes de integrarlo en la org.
+- En ese repo la aprobación de Roberto es implícita: specs, tickets, PRs, revisión y merges los encarga el PM sin pedirle OK a Roberto. Los PRs ahí no cuelgan de un issue de HR-KODIGO; cuelgan de los issues del propio repo de pruebas.
+- Siguen requiriendo la orden explícita de Roberto: tocar la org `kodigo-grupo-12` o HR-KODIGO, y todo lo que afecte la app publicada en el Firebase `kodigo-grupo12` (desplegar reglas o índices, borrar datos). Las demás reglas (sin trailers ni atribución, no borrar ramas) siguen vigentes.
