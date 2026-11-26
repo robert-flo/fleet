@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Falla si una ficha o plantilla no carga CIRCUITO.md, o si contradice C5/C9/C11.
+# Falla si una ficha o plantilla no carga CIRCUITO.md, o si contradice C5/C6/C9/C11/C13.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -23,6 +23,9 @@ FORBIDDEN_REGEXES=(
   # C11: un encargo del PM ya está aprobado (ADR 0029).
   'propias palabras'
   'que vos digas que (él|Roberto) lo aprobó'
+  # C6/C13: las ramas de spec se conservan después del merge (ADR 0029).
+  # Solo el comando: mencionar «sin `--delete-branch`» está bien.
+  'pr merge[^`]*--delete-branch'
 )
 
 fail=0
@@ -42,7 +45,7 @@ while IFS= read -r -d '' f; do
   for re in "${FORBIDDEN_REGEXES[@]}"; do
     if matches="$(grep -Eni -e "$re" "$f" || true)"; then
       if [[ -n "$matches" ]]; then
-        echo "Contradice C5/C9/C11 (/$re/): $rel"
+        echo "Contradice C5/C6/C9/C11/C13 (/$re/): $rel"
         echo "$matches"
         fail=1
       fi
